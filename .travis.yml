@@ -1,0 +1,20 @@
+---
+language: python
+before_install:
+  - sudo apt-get update -q
+  - sudo apt-get install libpulse-dev swig -y
+python:
+  - "2.7"
+  - "3.3"
+  - "3.4"
+  - "3.5"
+  - "3.5"
+  - "3.6"
+  #- "3.7"
+install:
+  - pip install -r requirements.txt
+  - pip install textract
+script:
+  - ls -lR
+  - python generate_resume_template.py
+  - python check_wordfile.py
