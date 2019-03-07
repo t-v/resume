@@ -11,9 +11,9 @@ def generate_cv(resumedir, filename, template):
     elif filename.lower().endswith('.json'):
         context = json.loads(open(resumedir + "/" + filename, 'r').read())
     template.render(context)
-    template.save(resumedir + "/" + filename + ".docx")
+    template.save(resumedir + "/" + os.path.splitext(filename)[0] + ".docx")
 
-doc = DocxTemplate("cv_template.docx")
+doc = DocxTemplate("templates/cv_template.docx")
 
 resumedir = os.getcwd() + '/resume'
 for r, d, filenames in os.walk(resumedir):
