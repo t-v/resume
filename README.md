@@ -1,6 +1,6 @@
-# Generation script for a Dominion Expert Resume
+# Generation script for a resume
 
-[![Build Status](https://travis-ci.org/DominionExperts/de-resume.svg?branch=master)](https://travis-ci.org/DominionExperts/de-resume)
+[![Build Status](https://travis-ci.org/t-v/resume.svg?branch=master)](https://travis-ci.org/t-v/resume)
 
 ## Prerequisites
 
