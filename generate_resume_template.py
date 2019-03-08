@@ -15,7 +15,7 @@ def get_context(resumedir, filename):
     else:
         print(os.path.splitext(filename)[1] + " is not a valid source file.")
         context = {}
-    print(yaml.dump(context, encoding=('utf-8')))
+    # print(yaml.dump(context, encoding=('utf-8')))
     return context
 
 def generate_md(outputdir, context, template):
