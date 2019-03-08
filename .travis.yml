@@ -27,5 +27,3 @@ deploy:
     - output/resume.md
   skip_cleanup: true
   overwrite: true
-  on:
-    tags: true
