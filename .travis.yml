@@ -1,24 +1,27 @@
----
 language: python
 before_install:
-  - sudo apt-get update -q
-  - sudo apt-get install libpulse-dev swig -y
+- sudo apt-get update -q
+- sudo apt-get install libpulse-dev swig -y
 python:
-  - "3.4"
-  - "3.5"
-  - "3.6"
+- '3.4'
+- '3.5'
+- '3.6'
 install:
-  - pip install -r requirements.txt
-  - pip install textract
+- pip install -r requirements.txt
+- pip install textract
 script:
-  - ls -lR
-  - python generate_resume_template.py
-  - python check_wordfile.py
+- ls -lR
+- python generate_resume_template.py
+- python check_wordfile.py
 deploy:
   provider: releases
-  api_key: Vyt9W9OHzQDwQJBCUyadTsLKjEOBzJsN0mb8kErTd0sDhUG71a+2YSLBEFIp20QACjwCHakH1HZ8evtNQflypHo0BuKU3EOmiI7K9qkTUFZyua+sHYPgs8hx+NLo9uw66K1R/9W4omshOU9QwWvUYCc1/XDVSfGe0JRWbsbpZBJKIIIzNQogYm+9adA2Y9wKBiYWhAoK3P1yA8lujmmd3nseIjA4SBhRJNpjUZ7T5+HvhDRJ/PkgrAHvhO6CMsb4l+2y/LQHerKI5gJs2st0ccmPERCJxsynpDPOEn10QaVUzYwmbmh6gT0VO2QQBL54OJix7euVdmyuxlrB5mTYlZZniVI7O4IVwBF5mhtLPC3am1iPtzNk/ofLz7pwQ/jDTOP9yyQg36SzqoJx+sYayg9B3qEy9CMXgyA9EcA63oS+EHtUKwmgESDZqPIaBlgOuH3Ds64vRC5JNfi2ceNqtwB5hnHP6CNG7CSD+2XPhx7krESheurbmRE7Vj8ZdxzPRsTfsXFtEPoPNU7Id7RDxN+hi87yB3jPturo/GF69ORrRBWoOjq7phGL8i5/XgezK5xUEPaCd1l/4Qi1sKUWuH8J/9Y56HKh/zThFFrfRvtQhxDodeatI+z+/RcO7VhKq+5WAXX330uN35ajI0r6yFljlHhqOcWS+udwHrUvUas=
+  api_key:
+    secure: Vyt9W9OHzQDwQJBCUyadTsLKjEOBzJsN0mb8kErTd0sDhUG71a+2YSLBEFIp20QACjwCHakH1HZ8evtNQflypHo0BuKU3EOmiI7K9qkTUFZyua+sHYPgs8hx+NLo9uw66K1R/9W4omshOU9QwWvUYCc1/XDVSfGe0JRWbsbpZBJKIIIzNQogYm+9adA2Y9wKBiYWhAoK3P1yA8lujmmd3nseIjA4SBhRJNpjUZ7T5+HvhDRJ/PkgrAHvhO6CMsb4l+2y/LQHerKI5gJs2st0ccmPERCJxsynpDPOEn10QaVUzYwmbmh6gT0VO2QQBL54OJix7euVdmyuxlrB5mTYlZZniVI7O4IVwBF5mhtLPC3am1iPtzNk/ofLz7pwQ/jDTOP9yyQg36SzqoJx+sYayg9B3qEy9CMXgyA9EcA63oS+EHtUKwmgESDZqPIaBlgOuH3Ds64vRC5JNfi2ceNqtwB5hnHP6CNG7CSD+2XPhx7krESheurbmRE7Vj8ZdxzPRsTfsXFtEPoPNU7Id7RDxN+hi87yB3jPturo/GF69ORrRBWoOjq7phGL8i5/XgezK5xUEPaCd1l/4Qi1sKUWuH8J/9Y56HKh/zThFFrfRvtQhxDodeatI+z+/RcO7VhKq+5WAXX330uN35ajI0r6yFljlHhqOcWS+udwHrUvUas=
   file:
-    - "output/resume.docx"
-    - "output/resume.md"
+  - output/resume.docx
+  - output/resume.md
   skip_cleanup: true
   overwrite: true
+env:
+  global:
+    secure: R5X1g97uy8Ml6DZMYqozuAUuJKYJkt3v1egq4orfpgvoKexJRUFasMEh+c8zIl8CM85/prAN76XK7CpuLTnWol+ZiZUSGDTw0HETV2+lZyjuJhhpUIk9eIUIW2HD7IB2kJ2DUJ8+YfZ70JndGgjoCyYI2q6uKngPyoB3Tiz2EvvHhPDdkMT6DXENBM8EzbW+Fwf7EPEUp/dy5Doo8nbdUuARP6FBoSOQtGdkdxnBR/XarMR7YwZ95MYV3FvoHmndl2VsW6QdJyv9KBfFi7QXOzEZXp+6MWldfRu5afTcbM3tGFenmeMhRMCijidluXYFfWOxeH9QwnL5Saek6YzjjlfbaGV57yBCeIcnhNexH8x2usmxR6cUVmWtH8+Q2R+TKOSh+cS5oUl3wLAyU4ci0h2Meugn8tK4TPYX5+YqlxE7C94cAWZJD369BeOxUeV4f97vAR2hg+hyrBLvnYp7q72I7GM4/eGzjg4rPkUqngJGlZACKU4r0dn/MB0a3Lksk+dxD507gHG4IR0bXXrDUIouP1t/pjW6Ry4KEy7a9wWLy8R8e4g0oQKs7sHj5ZzL9quay2ZfoHMNVXzHsGNnDupAJFTgLW8jHIGxkzYH6Z/iR1KMbxgbPIayeC/m7zNHaH7AIu4nmzpu2js0q6oEvEG1A4nV5R/vJpZ8bxC5r1o=
