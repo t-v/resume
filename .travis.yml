@@ -11,6 +11,11 @@ script:
   - ls -lR
   - python generate_resume_template.py
   - python check_wordfile.py
+before_deploy:
+  - git config --local user.name "t-v"
+  - git config --local user.email "timothy.vandenbrande@gmail.com"
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+  - git tag $TRAVIS_TAG
 deploy:
   name: Curiculum Vitae
   body: My from YAML generated resume.
@@ -24,8 +29,3 @@ deploy:
   overwrite: true
   on:
     tags: true
-after_deploy:
-  - git config --local user.name "t-v"
-  - git config --local user.email "timothy.vandenbrande@gmail.com"
-  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
-  - git tag $TRAVIS_TAG
