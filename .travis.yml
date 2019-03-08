@@ -15,3 +15,12 @@ script:
   - ls -lR
   - python generate_resume_template.py
   - python check_wordfile.py
+deploy:
+  provider: releases
+  api_key:
+    secure: "BnsRkJ6u4x1jJyfoe3D1kNAm63+CNHi+Y16TfBhhxfrFbSFpl3fyffHX5RMlUIIgeZ+wj1iyHP0rpvinvnFXbs04Q5LaRX5xBhVCl0MdIuQx8OhiEO7tR6+0R4tOpMpnLXxRB32wFVj1x3abG/L+WAUOIIHgRFA1aE5+NvMparBbvPVhg36NImRE2I1fnpDVzd5F1jLlseSUmbRaI5G7JftSCDqZPXAPe7arb/3qXXP8wLkgD9h+vPHO4g23XHpsCKXX8/yxq0RgJ+NjHeiNaeodraYsVeJL2ifra/LemiJkMQIVbVJa4oX46w4FEHXKAmdmcYVP/kGKb+FlLPsTALl5W89czlIfLqJXt/zBYfsz9yBPhtr6lI5GZym3w+rDhhygnWFVVAj14Veq45SIeITb8lhgIzGrCltRjYFnlsah9+u1k2HoJACCM9D1IC1LQQSOdN2TObIJYn/GeQtDxb/xSWlnpc3wSNNPBFXDv65m9bYRNXqKgpqwqd8/egeb12txgL0R2oWGED4clvyLfhu6avjz0WePFTvHs/kLLkhm0eyF7y8KE7O5RZIkbH7ct7WPbbPvj4d+dwtlGnDhcm0+o4ka0oVDgTdCqzRQ1BUWsbx9NXMF1wiO2u+fRF4Q5ufwvDfVlKdDASs3RZIFn3L34n/ZrMm0D6LMmXpI1Ag="
+  file:
+    - "output/resume.docx"
+    - "output/resume.md"
+  skip_cleanup: true
+  overwrite: true
