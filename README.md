@@ -31,4 +31,3 @@ Yes, it is __this__ easy.
 2. Add your resume __JSON__ or __YAML__ file to the resume folder
 3. Run `docker run --rm -ti -v $(pwd)/resume:/app/resume t-v/resume`
 4. Find your generated resume in the `resume` folder
-
