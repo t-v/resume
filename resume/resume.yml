@@ -20,9 +20,9 @@ contact:
   phone: "+32 479 45 73 73"
   email: "timothy.vandenbrande@gmail.com"
 location:
-  address: "Fostierlaan 52"
-  city: Ronse
-  code: "B-9600"
+  address: "Dahlistraat 31"
+  city: Gent
+  code: "B-9000"
   country: BE
 social:
   - label: GitHub
@@ -380,6 +380,7 @@ skills:
         Python: 4
         Powershell: 4
         YAML: 5
+        Go: 2
 
     - name: Remote Desktop
       level: intermediate
