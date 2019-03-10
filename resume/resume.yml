@@ -29,6 +29,10 @@ social:
     network: GitHub
     user: t_v
     url: "https://github.com/t_v"
+  - label: LinkedIn
+    network: LinkedIn
+    user: timothy-vandenbrande
+    url: https://www.linkedin.com/in/timothy-vandenbrande
 projects:
   - title: Ansible
     category: FOSS
