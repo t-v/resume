@@ -1,7 +1,7 @@
 ---
 name: "Timothy Vandenbrande"
 meta:
-  version: "20190308"
+  version: "20190423"
 info:
   firstname: Timothy
   surname: Vandenbrande
@@ -334,6 +334,7 @@ skills:
         Coaching: 3
         Envisioning: 3
         Teaching: 3
+
     - name: Architecture
       level: advanced
       skills:
@@ -351,13 +352,23 @@ skills:
         Config Management: 5
         Scripting: 4
         Versioning: 5
+    
+    - name: Orchestration
+      level: advanced
+      skills:
+        Kubernetes: 4
+        OpenShift: 4
+        Terraform: 3
+        OpenStack: 3
 
-    - name: Operating Systems
+    - name: CI
       level: master
       skills:
-        Linux: 4
-        Windows Server: 3
-        Windows: 3
+        Jenkins: 5
+        Concourse CI: 5
+        Travis CI: 3
+        GitLab CI: 3
+        Drone: 2
 
     - name: Virtualisation
       level: advanced
@@ -385,6 +396,13 @@ skills:
         Powershell: 4
         YAML: 5
         Go: 2
+
+    - name: Operating Systems
+      level: master
+      skills:
+        Linux: 4
+        Windows Server: 3
+        Windows: 3
 
     - name: Remote Desktop
       level: intermediate
