@@ -91,6 +91,34 @@ employment:
         - "Behavior based coaching"
         - "Present new technologies and how to implement it within our vision"
 
+    - employer: "TVH nv"
+      url: "https://www.tvh.com/"
+      position: "DevOps Architect"
+      summary: |
+        TVH is in the middle of doing a major migration in the cloud which brings a lot of new and unexplored challenges for the company. My main influence here is to smoothen the transition and help moving the small chunks (microservices) they are detaching from their old progress monolith.
+        One of the biggest challenges here is to give everyone enough room to fully execute their tasks in their little playground and make sure the whole is well protected from threats from the outside as from the inside.
+        Another huge part is coaching people to adopt the DevOps philosophy and convincing them that it is not because you are configuring servers the same way for 10 years now, that it is the most correct or efficient ways to manage it. This was the perfect moment to introduce the concepts of Infrastructure-as-Code
+      start: "2019-08"
+      current: true
+      keywords:
+        - DevOps
+        - GCP
+        - IAM
+        - security
+        - Terraform
+        - Ansible
+        - Vault
+        - Kubernetes
+        - Rancher
+        - Spinnaker
+        - Configuration Management
+        - Python
+        - Groovy
+      highlights:
+        - "Secure the organization in the cloud."
+        - "Setup a basic framework for devs to use."
+        - "Introduce IaC."
+
     - employer: "Cegeka nv"
       url: "https://www.cegeka.com/"
       position: "DevOps Architect"
@@ -99,7 +127,7 @@ employment:
         The Technical part was split up in 2 parts. A part of it, I sat in a true development environment where the focus was to push out new content as fast and stable as possible. Priority here was pipeline optimization, ease to configure and adapt new services and pipelines on a kubernetes environment and bringing some power to the developers. We want to enable them to do everything required, with easy to use tooling and an abstraction layer they feel comfortable using.
         The other part was in an operations team that mainly functioned as-a-service and maintained and managed the infrastructure for all kinds of development teams within Cegeka in an Infrastructure-as-Code fashion. This included designing and executing with the rest of the team, the requirements of the external and internal customers on our infrastructure.
       start: "2017-09"
-      current: true
+      end: "2018-08"
       keywords:
         - DevOps
         - IaC
