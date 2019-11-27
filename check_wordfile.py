@@ -14,17 +14,15 @@ for line in str(text).split('\n'):
 
 if faulty:
     print("Not all template variables have been resolved")
-    raise
+    raise ValueError
 
-# text = textract.process('output/resume.md', extension='md')
-
-faulty = False
-for line in str(text).split('\n'):
-    if "{{" in line or "}}" in line:
-        faulty = True
-        print(line)
-    #print line
+filepath = 'output/resume.md'
+with open(filepath) as fp:
+    for cnt, line in enumerate(fp):
+        if "{{" in line or "}}" in line:
+            faulty = True
+            print(line)
 
 if faulty:
     print("Not all template variables have been resolved")
-    raise
+    raise ValueError
