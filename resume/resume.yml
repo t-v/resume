@@ -8,7 +8,7 @@ info:
   birth: "1984-06-06"
   nationality: Belgian
   gender: male
-  city: Ghent
+  city: Zottegem
   label: "DevOps Architect"
   characterClass: Architect
   brief: ""
@@ -20,9 +20,9 @@ contact:
   phone: "+32 479 45 73 73"
   email: "timothy.vandenbrande@gmail.com"
 location:
-  address: "Dahliastraat 31"
-  city: Gent
-  code: "B-9000"
+  address: "Molenweg 2C"
+  city: Zottegem
+  code: "B-9620"
   country: BE
 social:
   - label: GitHub

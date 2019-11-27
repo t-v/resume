@@ -1,6 +1,6 @@
 # Generation script for a resume
 
-[![Build Status](https://travis-ci.org/t-v/resume.svg?branch=master)](https://travis-ci.org/t-v/resume)
+[![Build Status](https://travis-ci.com/t-v/resume.svg?branch=master)](https://travis-ci.org/t-v/resume)
 
 ## Prerequisites
 
