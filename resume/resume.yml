@@ -27,8 +27,8 @@ location:
 social:
   - label: GitHub
     network: GitHub
-    user: t_v
-    url: "https://github.com/t_v"
+    user: t-v
+    url: "https://github.com/t-v"
   - label: LinkedIn
     network: LinkedIn
     user: timothy-vandenbrande
