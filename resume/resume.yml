@@ -54,7 +54,7 @@ projects:
     start: "2015-09"
     repo: "https://github.com/t_v/chronicles"
     description: "The adventures of Cthulhu Dawn while trying to defeat a new evil."
-    summary: "I helped a friend of mine to visualize the book she wrote as a fanfiction."
+    summary: "I helped a friend of mine to visualize the fanfiction she wrote."
     keywords:
     - HTML
     - CSS
@@ -67,8 +67,11 @@ employment:
       url: "https://www.dominionexperts.be"
       position: "Competence Center Lead, SRE/DevOps Architect"
       summary: |
-        My main function is to lead a DevOps competence center. Not just to show off all the hip and trendy tooling, but also to shift the mindset to a more continuous workflow and to push people to take co-ownership and responsibility in a project.
-        But of course you cannot say DevOps without showing off some tooling and showing how you can make your life easier and fail/fool-proof by automating even the most insignificant task. By looking at each task from a service perspective, we aim to get more continuity and stability to the work we deliver.
+        My main function is to lead a DeveOps competence center. DevOps evokes thoughts of hip and trendy
+        new tools which we utilized to show how much easier life can be with fail/fool-proof automating of
+        even the most insignificant task. However, just as important is shifting the mindset to have a more
+        continuous workflow while pushing people to take co-ownership and responsibility within a project.
+        By looking at each task from a service prospective, we aim to get more continuity and stability in the work we deliver. 
       start: "2013-09"
       current: true
       keywords:
@@ -85,7 +88,7 @@ employment:
         - "Document new flows"
         - "Build pipelines"
         - "Inspire colleagues in the DevOps way of life"
-        - "Check if the internal competence are still in-line with the market"
+        - "Check if the internal competences are still in-line with the market"
         - "Guide colleagues on their external projects"
         - "Recruite core skills"
         - "Performance based coaching"
@@ -96,7 +99,11 @@ employment:
       url: "https://www.collibra.com/"
       position: "Cloud Native Architect"
       summary: |
-        At Collibra my main function was to create a stable environment for their new product to be deployed on. The main focus here is to guarantee stability and security. The downside is that we had to give in a bit on the speed of the feedbackloops, but by doing this we can guarantee that our product is hardened for whatever workload they will deploy on it.
+        At Collibra, my main function was to create a stable environment on which they
+        could deploy their new product. With the main focus being to guarantee stability
+        and security, we had to make some adjustments regarding the speed of the feedback
+        loops. However, this compromise was necessary to guarantee the longevity of our
+        product in meeting the needs of their future workload. 
       start: "2020-01"
       current: true
       keywords:
@@ -117,15 +124,19 @@ employment:
       highlights:
         - "Harden infrastructure"
         - "Design and optimize test patterns"
-        - "Don't just code automation, but make it all run automatically."
+        - "Don't just code automation, but make it all run automatically"
 
     - employer: "TVH nv"
       url: "https://www.tvh.com/"
       position: "SRE Architect"
       summary: |
-        TVH is in the middle of doing a major migration in the cloud which brings a lot of new and unexplored challenges for the company. My main influence here is to smoothen the transition and help moving the small chunks (microservices) they are detaching from their old progress monolith.
-        One of the biggest challenges here is to give everyone enough room to fully execute their tasks in their little playground and make sure the whole is well protected from threats from the outside as from the inside.
-        Another huge part is coaching people to adopt the DevOps philosophy and convincing them that it is not because you are configuring servers the same way for 10 years now, that it is the most correct or efficient ways to manage it. This was the perfect moment to introduce the concepts of Infrastructure-as-Code
+        TVH is in the middle of a major migration in the cloud which brings a lot of new and unexplored
+        challenges for them. My main influence here was to ease the transition and help move the small chunks
+        (microservices) that they were detaching from their old progress monolith. One of the biggest challenges
+        here was to give everyone enough room to fully execute their tasks in individual work environments while
+        making sure the whole is fully protected from internal and external threats. Another large part of my role
+        was coaching people in the merits of adopting the DevOps philosophy. This was the perfect moment to introduce
+        the concepts of Infrastructure-as-Code to show that a decade of one way is not a solid reason to deny more efficient means. 
       start: "2019-08"
       end: "2020-01"
       keywords:
@@ -143,17 +154,25 @@ employment:
         - Python
         - Groovy
       highlights:
-        - "Secure the organization in the cloud."
-        - "Setup a basic framework for devs to use."
-        - "Introduce IaC."
+        - "Secure the organization in the cloud"
+        - "Setup a basic framework for devs to use"
+        - "Introduce IaC"
 
     - employer: "Cegeka nv"
       url: "https://www.cegeka.com/"
       position: "DevOps Architect"
       summary: |
-        My job here was 2-facetted. Partly it was architectural designs and getting the technical part rolling and automated while coaching colleagues and customers to undergoing a digital transformation in a DevOps way.
-        The Technical part was split up in 2 parts. A part of it, I sat in a true development environment where the focus was to push out new content as fast and stable as possible. Priority here was pipeline optimization, ease to configure and adapt new services and pipelines on a kubernetes environment and bringing some power to the developers. We want to enable them to do everything required, with easy to use tooling and an abstraction layer they feel comfortable using.
-        The other part was in an operations team that mainly functioned as-a-service and maintained and managed the infrastructure for all kinds of development teams within Cegeka in an Infrastructure-as-Code fashion. This included designing and executing with the rest of the team, the requirements of the external and internal customers on our infrastructure.
+        My job here was multi-faceted. I managed the architectural designs, automation, and progression
+        of the technical aspects while coaching colleagues and customers in transitioning to the DevOps way.
+        The technical aspects were divided into two parts. The first half was working daily within the
+        development environment. Their priority was producing content as fast and as stable as possible.
+        My priority was to allow them the ability to focus on development by bringing them easy to use
+        tooling and an abstraction layer they felt comfortable using. This was accomplished through pipeline
+        optimization, ease of configuration, and adapting new services and pipelines on a Kubernetes environment
+        that would empower the developers. My other role was as part of an operations team. It functioned as a
+        service which maintained and managed the infrastructure for various development teams within Cegeka in
+        an Infrustructure-as-Code fashion. Through this, we designed and executed the requirements of the external
+        and internal customers on our infrastructure. 
       start: "2017-09"
       end: "2018-08"
       keywords:
@@ -174,11 +193,11 @@ employment:
         - shell
         - Python
       highlights:
-        - "Setup and design of container platforms."
-        - "Teaching and envisioning the DevOps way."
-        - "Introducing new technologies."
+        - "Setup and design of container platforms"
+        - "Teaching and envisioning the DevOps way"
+        - "Introducing new technologies"
         - "Optimize IaC"
-        - "Create, design and optimize build pipelines."
+        - "Create, design and optimize build pipelines"
 
     - employer: "Mediahuis nv"
       url: "http://www.mediahuis.be/"
@@ -204,7 +223,12 @@ employment:
       url: "http://www.ypto.be/"
       position: "Senior DevOps Engineer, Project Manager"
       summary: |
-        We had to migrate from our old infrastructure to our new infrastructure. The baseline here was to get it fully automated and stable, as we were responsible for the management of the whole stack. From maintaining firmware upgrades for the hardware to deploying the artifacts coming from our development teams. We had to constantly test our durability and needed to maintain a 96% uptime on our production environment. This is why we automated the full chain which we constantly stress-tested. This way we could have a decent view of where our current bottlenecks are and how we could even further improve this.
+        We had to migrate from the old infrastructure to the new infrastructure. The goal was to fully
+        automate and stabilize because we were responsible for the whole stack—from maintaining firmware
+        upgrades to deploying artifacts coming from the development teams. We were required to constantly
+        test durability while maintaining a 96% uptime on the production environment. The best solution was
+        to fully automate the chain allowing us to better stress-test the environment. This gave us the ability
+        to better assess our current bottlenecks which provided valuable insight to make future improvements. 
       start: "2013-09"
       end: "2017-03"
       keywords:
@@ -232,20 +256,25 @@ employment:
       highlights:
         - "What is the next step to take to evolve our infrastructure?"
         - "What is the TCO of implemented vs to-be implemented software?"
-        - "Hardware/software choices."
+        - "Hardware/software choices"
         - "Defining deadlines"
         - "Pinpoint SPOF in our infrastructure and plan how to make those HA"
-        - "Discuss with the team and key persons in development on how to automate the current flow even further and define which points are still need to get optimised."
-        - "Fully automate new virtual Linux and Windows deployments through a Linux control host with Ansible."
-        - "Automation and execution of daily operational tasks."
+        - "Discuss with the team and key persons in development on how to automate the current flow even further and define which points are still in need of optimization"
+        - "Fully automate new virtual Linux and Windows deployments through a Linux control host with Ansible"
+        - "Automation and execution of daily operational tasks"
         - "Automate java builds and deployments through a pipeline"
 
     - employer: "IT-Care"
       url: "http://www.itcare.be/"
       position: "Cloud Integration Engineer"
       summary: |
-        Our main focus was to maintain customer environments, mostly focused around transportation and accounting.
-        We did a lot of cloud migrations to up the accessibility and guarantee a faster and more dynamic workplace setting. This went from exchange migrations to Office365, to full cloud environments, where every single thing got moved to the cloud.
+        Our main focus was to maintain customer environments mainly focused around transportation and accounting.
+        We performed numerous cloud migrations to increase accessibility and guarantee a faster, more dynamic workplace
+        setting. We completed various migrations to meet client needs. This ranged from exchange to Office365 to full
+        cloud migrations. One such project was a fully redundant virtualized environment with fail-over that included
+        migration from the old system to the new one with a connection to Office365. Another project was a cloud migration
+        with only a local controller for authentication for the local desktops. This included full Office365 integration
+        and inter site communication. 
       start: "2012-01-01"
       end: "2013-06-30"
       keywords:
@@ -258,10 +287,7 @@ employment:
         - MS System Center
         - MS SQL Server
         - Office365
-      highlights:
-        - "Start up a fully redundant virtualized environment with fail-over and migrate the old one to the new one with connection to Office365."
-        - "Cloud migration with only a local domain controller for authentication towards the local desktops. Full Office365 integration and inter site communication."
-
+    
     - employer: POLARIS Creative Solutions
       url: http://www.polariscs.com
       position: owner
@@ -321,7 +347,7 @@ employment:
         Managing and executing the migration from the ancient NT4.0/2000 environment to a full windows 2008 environment
         with new clients (Windows Vista). This was executed with the help of an external partner which was going to give support once the project was finished.
       start: "2008-06"
-      end: "2009-12"
+      end: "2008-12"
       keywords:
         - MS Windows Server
         - MS SQL Server
@@ -352,8 +378,8 @@ employment:
       start: "2007-03"
       end: "2007-10"
       summary: |
-        I gave support towards external clients who were installing the Siemens products
-        and did the small IT requirements in-house (taking backup, printer issues, internal it-helpdesk)
+        I gave support to external clients during installation of Siemens products. I also completed
+        in-house small IT jobs which included taking backups, troubleshooting printer issues, and serving as internal IT helpdesk. 
       keywords:
         - MS Windows Server
         - Windows
