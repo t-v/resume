@@ -78,6 +78,7 @@ employment:
         - Coaching
         - Automation
         - Envisioning
+        - Agile
       highlights:
         - "Automate the lifecycle of different platforms and application"
         - "Predict growth and requirements"
@@ -99,7 +100,7 @@ employment:
       start: "2020-01"
       current: true
       keywords:
-        - DevOps/GitOps
+        - GitOps
         - AWS
         - GCP
         - security
@@ -398,6 +399,13 @@ skills:
         Hardware lifecycle: 4
         Design: 3
 
+    - name: Cloud providers
+      level: advanced
+      skills:
+        AWS: 3
+        GCP: 5
+        Azure: 3
+
     - name: DevOps
       level: master
       skills:
@@ -421,7 +429,8 @@ skills:
       skills:
         Jenkins: 5
         Concourse CI: 5
-        Travis CI: 3
+        Travis CI: 4
+        CircleCI: 3
         GitLab CI: 3
         Drone: 2
 
@@ -450,42 +459,13 @@ skills:
         Python: 4
         Powershell: 4
         YAML: 5
-        Go: 2
+        Go: 3
 
     - name: Operating Systems
       level: master
       skills:
-        Linux: 4
+        Linux: 5
         Windows Server: 3
-        Windows: 3
-
-    - name: Remote Desktop
-      level: intermediate
-      skills:
-        Citrix XenApp: 2
-        Windows Remote Desktop: 3
-
-    - name: Backup
-      level: advanced
-      skills:
-        BackupPC: 5
-        BareOS: 3
-        CA ARCserve 16: 4
-        Microsoft DPM: 3
-        Symantec Backup Exec: 5
-        Zenith MirrorCloud: 5
-
-    - name: Mail
-      level: intermediate
-      skills:
-        Microsoft Exchange: 3
-        Office365: 4
-        Zimbra: 3
-
-    - name: Communication
-      level: intermediate
-      skills:
-        Skype for Business: 2
 
     - name: Database
       level: intermediate
@@ -499,7 +479,7 @@ skills:
       skills:
         Apache: 4
         Internet Information Services: 3
-        NGINX: 3
+        NGINX: 4
 
 references:
   - name: Patrick Dekens
