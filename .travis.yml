@@ -27,3 +27,4 @@ deploy:
     - output/resume.docx
     - output/resume.md
   overwrite: true
+  skip_cleanup: true
