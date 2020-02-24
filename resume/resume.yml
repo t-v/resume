@@ -65,7 +65,7 @@ employment:
   history:
     - employer: "Dominion Experts bvba"
       url: "https://www.dominionexperts.be"
-      position: "Competence Center Lead, DevOps Architect"
+      position: "Competence Center Lead, SRE/DevOps Architect"
       summary: |
         My main function is to lead a DevOps competence center. Not just to show off all the hip and trendy tooling, but also to shift the mindset to a more continuous workflow and to push people to take co-ownership and responsibility in a project.
         But of course you cannot say DevOps without showing off some tooling and showing how you can make your life easier and fail/fool-proof by automating even the most insignificant task. By looking at each task from a service perspective, we aim to get more continuity and stability to the work we deliver.
@@ -91,15 +91,42 @@ employment:
         - "Behavior based coaching"
         - "Present new technologies and how to implement it within our vision"
 
+    - employer: "Collibra nv"
+      url: "https://www.collibra.com/"
+      position: "Cloud Native Architect"
+      summary: |
+        At Collibra my main function was to create a stable environment for their new product to be deployed on. The main focus here is to guarantee stability and security. The downside is that we had to give in a bit on the speed of the feedbackloops, but by doing this we can guarantee that our product is hardened for whatever workload they will deploy on it.
+      start: "2020-01"
+      current: true
+      keywords:
+        - DevOps/GitOps
+        - AWS
+        - GCP
+        - security
+        - Golang
+        - Terraform
+        - kops
+        - Kubernetes
+        - Datadog
+        - SignalFX
+        - Argo CD
+        - Configuration Management
+        - Groovy
+        - Elastic (ECK)
+      highlights:
+        - "Harden infrastructure"
+        - "Design and optimize test patterns"
+        - "Don't just code automation, but make it all run automatically."
+
     - employer: "TVH nv"
       url: "https://www.tvh.com/"
-      position: "DevOps Architect"
+      position: "SRE Architect"
       summary: |
         TVH is in the middle of doing a major migration in the cloud which brings a lot of new and unexplored challenges for the company. My main influence here is to smoothen the transition and help moving the small chunks (microservices) they are detaching from their old progress monolith.
         One of the biggest challenges here is to give everyone enough room to fully execute their tasks in their little playground and make sure the whole is well protected from threats from the outside as from the inside.
         Another huge part is coaching people to adopt the DevOps philosophy and convincing them that it is not because you are configuring servers the same way for 10 years now, that it is the most correct or efficient ways to manage it. This was the perfect moment to introduce the concepts of Infrastructure-as-Code
       start: "2019-08"
-      current: true
+      end: "2020-01"
       keywords:
         - DevOps
         - GCP
