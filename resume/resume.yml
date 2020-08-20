@@ -439,9 +439,9 @@ skills:
     - name: "People skill"
       level: intermediate
       skills:
-        Coaching: 3
-        Envisioning: 3
-        Teaching: 3
+        Coaching: 4
+        Envisioning: 4
+        Teaching: 4
 
     - name: Architecture
       level: advanced
@@ -466,7 +466,6 @@ skills:
         Build automation: 4
         Config Management: 5
         Scripting: 4
-        Versioning: 5
     
     - name: Orchestration
       level: advanced
@@ -481,6 +480,7 @@ skills:
       skills:
         Jenkins: 5
         Concourse CI: 5
+        Google Cloud Build: 4
         Travis CI: 4
         CircleCI: 3
         GitLab CI: 3
@@ -539,7 +539,7 @@ references:
     company: Group IR
   - name: Erwin François
     function: .NET Architect
-    company: Dominion Experts
+    company: POCI
   - name: Anthony Cauwelier
     function: Operations Manager
     company: B-Europe
@@ -555,8 +555,8 @@ languages:
 interests:
   - name: Gaming
     keywords:
-      - Guild Wars
       - Elder Scrolls
+      - Doom Eternal
       - Warframe
   - name: Movies
     keywords:
