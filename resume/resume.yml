@@ -90,10 +90,36 @@ employment:
         - "Inspire colleagues in the DevOps way of life"
         - "Check if the internal competences are still in-line with the market"
         - "Guide colleagues on their external projects"
-        - "Recruite core skills"
+        - "Recruit core skills"
         - "Performance based coaching"
         - "Behavior based coaching"
         - "Present new technologies and how to implement it within our vision"
+
+    - employer: "TVH nv"
+      url: "https://www.tvh.com/"
+      position: "Interim CoE Lead - System Enabling"
+      summary: |
+        System Enabling is a very diverse team with a lot of requirements.
+        My main purpose here was to add more Agile/DevOps practices and rituals
+        to the daily routine. One of the big projects I carried during my short
+        time here was to start using a GitOps deployment flow. This was
+        resolved by introducing ArgoCD with Helm combined with automated build and
+        promotion pipelines in Jenkins.
+      start: "2020-07"
+      current: true
+      keywords:
+        - DevOps
+        - Agile
+        - Kanban
+        - GitOps
+        - ArgoCD
+        - Helm
+        - Kubernetes
+        - GCP
+      highlights:
+        - "Up the velocity of the team"
+        - "Introduce GitOps"
+        - "Refine Agile Practices"
 
     - employer: "Collibra nv"
       url: "https://www.collibra.com/"
