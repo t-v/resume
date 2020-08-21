@@ -67,11 +67,11 @@ employment:
       url: "https://www.dominionexperts.be"
       position: "Competence Center Lead, SRE/DevOps Architect"
       summary: |
-        My main function is to lead a DeveOps competence center. DevOps evokes thoughts of hip and trendy
+        My main function is to lead a DevOps competence center. DevOps evokes thoughts of hip and trendy
         new tools which we utilized to show how much easier life can be with fail/fool-proof automating of
         even the most insignificant task. However, just as important is shifting the mindset to have a more
         continuous workflow while pushing people to take co-ownership and responsibility within a project.
-        By looking at each task from a service prospective, we aim to get more continuity and stability in the work we deliver. 
+        By looking at each task from a service perspective, we aim to get more continuity and stability in the work we deliver. 
       start: "2013-09"
       current: true
       keywords:
@@ -197,7 +197,7 @@ employment:
         optimization, ease of configuration, and adapting new services and pipelines on a Kubernetes environment
         that would empower the developers. My other role was as part of an operations team. It functioned as a
         service which maintained and managed the infrastructure for various development teams within Cegeka in
-        an Infrustructure-as-Code fashion. Through this, we designed and executed the requirements of the external
+        an Infrastructure-as-Code fashion. Through this, we designed and executed the requirements of the external
         and internal customers on our infrastructure. 
       start: "2017-09"
       end: "2018-08"
@@ -428,6 +428,7 @@ education:
   - institution: "Hogeschool Gent"
     title: "Bachelor's Degree Applied Informatics"
     year: "200806"
+
 certification:
   - title: VCE for aXsGUARD Gatekeepr 7.6 - Core
     year: 2012
@@ -439,99 +440,148 @@ skills:
     - name: "People skill"
       level: intermediate
       skills:
-        Coaching: 4
-        Envisioning: 4
-        Teaching: 4
+        - name: Coaching
+          level: 4
+        - name: Envisioning
+          level: 4
+        - name: Teaching
+          level: 4
 
     - name: Architecture
       level: advanced
       skills:
-        Documenting infrastructure: 3
-        Budget management: 3
-        Hardware lifecycle: 4
-        Design: 3
+        - name: Documenting infrastructure
+          level: 3
+        - name: Budget management
+          level: 3
+        - name: Hardware lifecycle
+          level: 4
+        - name: Design
+          level: 3
 
     - name: Cloud providers
       level: advanced
       skills:
-        AWS: 3
-        GCP: 5
-        Azure: 3
+        - name: AWS
+          level: 3
+        - name: GCP
+          level: 5
+        - name: Azure
+          level: 3
 
     - name: DevOps
       level: master
       skills:
-        Automated deployment: 5
-        Automated testing: 3
-        Build automation: 4
-        Config Management: 5
-        Scripting: 4
+        - name: Automated deployment
+          level: 5
+        - name: Automated testing
+          level: 3
+        - name: Build automation
+          level: 4
+        - name: Config Management
+          level: 5
+        - name: Scripting
+          level: 4
     
     - name: Orchestration
       level: advanced
       skills:
-        Kubernetes: 4
-        OpenShift: 4
-        Terraform: 3
-        OpenStack: 3
+        - name: Kubernetes
+          level: 5
+        - name: OpenShift
+          level: 4
+        - name: Terraform
+          level: 4
+        - name: OpenStack
+          level: 3
 
     - name: CI
       level: master
       skills:
-        Jenkins: 5
-        Concourse CI: 5
-        Google Cloud Build: 4
-        Travis CI: 4
-        CircleCI: 3
-        GitLab CI: 3
-        Drone: 2
+        - name: Jenkins
+          level: 5
+        - name: Concourse CI
+          level: 5
+        - name: Google Cloud Build
+          level: 4
+        - name: Travis CI
+          level: 4
+        - name: CircleCI
+          level: 3
+        - name: GitLab CI
+          level: 3
+        - name: Drone
+          level: 2
 
     - name: Virtualisation
       level: advanced
       skills:
-        Hyper-V: 4
-        Red Hat Virtualisation / oVirt: 5
-        VMWare: 4
-        XenServer: 3
+        - name: Hyper-V
+          level: 4
+        - name: Red Hat Virtualisation / oVirt
+          level: 5
+        - name: VMWare
+          level: 4
+        - name: XenServer
+          level: 3
 
     - name: Configuration Management
       level: advanced
       skills:
-        Ansible: 5
-        Puppet: 4
-        Salt: 3
+        - name: Ansible
+          level: 5
+        - name: Puppet
+          level: 4
+        - name: Salt
+          level: 3
 
     - name: Scripting
       level: advanced
       skills:
-        Bash: 4
-        Groovy: 3
-        Javascript: 3
-        Jinja2: 5
-        Python: 4
-        Powershell: 4
-        YAML: 5
-        Go: 3
+        - name: Bash
+          level: 4
+        - name: Groovy
+          level: 3
+        - name: Javascript
+          level: 3
+        - name: Jinja2
+          level: 5
+        - name: Python
+          level: 4
+        - name: Powershell
+          level: 4
+        - name: YAML
+          level: 5
+        - name: Go
+          level: 3
 
     - name: Operating Systems
       level: master
       skills:
-        Linux: 5
-        Windows Server: 3
+        - name: Linux
+          level: 5
+        - name: Windows Server
+          level: 3
 
     - name: Database
       level: intermediate
       skills:
-        postgresql: 3
-        MS SQL Server: 3
-        MySQL: 4
+        - name: postgresql
+          level: 3
+        - name: MS SQL Server
+          level: 3
+        - name: MySQL
+          level: 4
 
     - name: Webservers
       level: advanced
       skills:
-        Apache: 4
-        Internet Information Services: 3
-        NGINX: 4
+        - name: Apache
+          level: 4
+        - name: Internet Information Services
+          level: 3
+        - name: NGINX
+          level: 4
 
 references:
   - name: Patrick Dekens

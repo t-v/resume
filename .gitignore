@@ -590,3 +590,4 @@ paket-files/
 
 output/*.docx
 output/*.md
+.vscode
