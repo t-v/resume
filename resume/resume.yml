@@ -97,7 +97,7 @@ employment:
 
     - employer: "TVH nv"
       url: "https://www.tvh.com/"
-      position: "CoE Lead - System Enabling"
+      position: "Lead System Enabling"
       summary: |
         System Enabling is a very diverse team with a lot of requirements.
         My main purpose here was to add more Agile/DevOps practices and rituals
@@ -585,7 +585,7 @@ skills:
 
 references:
   - name: Jan Keirse
-    function: CoE Lead System Enabling
+    function: Lead System Enabling
     company: TVH
   - name: Patrick Dekens
     function: Business Manager
