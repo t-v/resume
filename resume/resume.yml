@@ -99,12 +99,12 @@ employment:
       url: "https://www.ucb.com/"
       position: "Technical Coordinator"
       summary: |
-        I was solely responsible for the technical coordination of the MyUCB project. This projects main purpose was to be the platform for patient <-> doctor interaction and to have the required feedback for the clinical studies.
-        As the platform is used for clinical studies, this also means the platform needs to be fully GxP validated before it can be used as this uses confidential patient data.
-        As a Technical Coordinator my job had 3 very distinct different parts.
-        The 1st one was as a scrum master/PO, taking care of the DevOps backlog and making sure the agile rituals were followed and that the necessary stories were added to make sure progress was made into automating as much as possible.
-        The 2nd part was about validation. We needed to have the platform GxP validated, which means we need to qualify installation, operation and performance. My job here was to run the IQ (installation qualification) and next to that, I would try to automate as much as possible of the manual steps. (As I prefer not to repeatedly do the same menial manual tasks.)
-        The 3rd part is all about debugging and error detection. Due to having confidential patient data, this platform was designed without any output, to make sure none of the data can get leaked in stack traces or anything. This made my search to identify what is breaking a very black box experience. I also created some procedures and requests to have some more visibility inside the platform to make identifying issues a lot easier in the future.
+        I was solely responsible for the technical coordination of the MyUCB project. This project's main purpose was to be the platform for patient <-> doctor interaction and to have the required feedback for the clinical studies.
+        As the platform is used for clinical studies, this also means the platform needs to be fully GxP validated before it can be released to the study as this uses confidential patient data.
+        As a Technical Coordinator my job had 3 very distinct parts.
+        The first one was as a scrum master/PO. This meant taking care of the DevOps backlog, making sure the agile rituals were followed and that the necessary stories were added to make sure progress was made into automating as much as possible.
+        The second part was about validation. We needed to have the platform GxP validated, which meant it was required to qualify installation, operation and performance. My job here was to run the IQ (installation qualification) and in the process, I would try to automate as much as possible of the manual steps. (As I prefer not to repeatedly do the same menial manual tasks.)
+        The third part was all about debugging and error detection. Due to having confidential patient data, this platform was designed without any output, to make sure none of the data can get leaked in stack traces. This required me to search blindly when errors occurred, and in turn lead me to create procedures and requests for more visibility in future tasks.
       start: "2020-12"
       current: true
       keywords:
