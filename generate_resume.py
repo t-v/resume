@@ -56,5 +56,6 @@ if __name__ == '__main__':
                 markdown_content = generate_md(outputdir, context, md)
                 #print(markdown_content)
                 html_content = generate_html(outputdir, context, html)
-                pdfkit.from_file(outputdir + "/" + os.path.splitext(filename)[0] + ".html", outputdir + "/" + os.path.splitext(filename)[0] + ".pdf", configuration=config)
+                # pdfkit.from_file(outputdir + "/" + os.path.splitext(filename)[0] + ".html", outputdir + "/" + os.path.splitext(filename)[0] + ".pdf", configuration=config)
+                pdfkit.from_file(outputdir + "/" + os.path.splitext(filename)[0] + ".html", outputdir + "/" + os.path.splitext(filename)[0] + ".pdf")
 
