@@ -1,6 +1,6 @@
 # Generation script for a resume
 
-[![Build Status](https://travis-ci.com/t-v/resume.svg?branch=master)](https://travis-ci.com/t-v/resume)
+[![Generate Resume](https://github.com/t-v/resume/actions/workflows/github-actions.yml/badge.svg)](https://github.com/t-v/resume/actions/workflows/github-actions.yml)
 
 
 ## Prerequisites
