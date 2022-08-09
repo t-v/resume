@@ -46,7 +46,7 @@ if __name__ == '__main__':
     html = "templates/cv_template.j2.html"
     outputdir = os.getcwd() + "/output"
     resumedir = os.getcwd() + "/resume"
-    config = pdfkit.configuration(wkhtmltopdf="C:\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")
+    # config = pdfkit.configuration(wkhtmltopdf="C:\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")
 
     for r, d, filenames in os.walk(resumedir):
         for filename in filenames:
