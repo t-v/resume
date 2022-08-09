@@ -35,6 +35,10 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: ${{ steps.time.outputs.time }}
+          release_name: Release ${{ steps.time.outputs.time }}
+          draft: false
+          prerelease: false
           files: |
             output/resume.md
             output/resume.html
