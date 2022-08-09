@@ -553,6 +553,8 @@ skills:
           level: 5
         - name: Concourse CI
           level: 5
+        - name: Azure DevOps
+          level: 4
         - name: Google Cloud Build
           level: 4
         - name: Travis CI
