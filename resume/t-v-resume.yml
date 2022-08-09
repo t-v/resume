@@ -1,7 +1,7 @@
 ---
 name: "Timothy Vandenbrande"
 meta:
-  version: "20190423"
+  version: "20220809"
 info:
   firstname: Timothy
   surname: Vandenbrande
@@ -15,7 +15,7 @@ info:
   image: ""
   quote: |
     What can go wrong, will go wrong!
-    Therefore we need to test every aspect, every time.
+    Therefore, we need to test every aspect, every time.
 contact:
   phone: "+32 479 45 73 73"
   email: "timothy.vandenbrande@gmail.com"
@@ -63,14 +63,14 @@ projects:
 employment:
   summary: "Years of experience in the DevOps culture."
   history:
-    - employer: "SAS"
+    - employer: "SAS nv"
       url: "https://www.sas.com/"
       position: "Technical Cloud Architect"
       summary: |
         My main focus here was enabling customers in getting the SAS Viya suite installed and integrated in their current environment.
         As an analytic platform it integrates with almost every dataset available in the company, which often requires a complex and well thought out architecture. This gets designed in cooperation with both the customer's business team as well as the customer's technical team and make sure their requirements and use cases align.
-        Once the architecture is approved and in place I needed to support the engineers in getting the SAS software installed and help both the SAS- as the customer's team in getting the local datasets integrated in SAS.
-        Apart from my customer facing consulting tasks, there are also the pre-sales consulting tasks, in which I help pre-sales architects work out sturdier and more modern architectures to fit with the customer's demands. This often starts with me designing a small simplified architecture of the final version and create a PoC to prove our capabilities to the customer.
+        Once the architecture is approved and in place, I needed to support the engineers in getting the SAS software installed and help both the SAS- as the customer's team in getting the local datasets integrated in SAS.
+        Apart from my customer facing consulting tasks, there are also the pre-sales consulting tasks, in which I help pre-sales architects work out sturdier and more modern architectures to fit with the customer's demands. This often starts with me designing a small, simplified architecture of the final version and create a PoC to prove our capabilities to the customer.
       start: "2022-01"
       current: true
       keywords:
@@ -85,9 +85,9 @@ employment:
         - Docker
         - ArgoCD
       highlights:
-        - "Help DIGIT in managing Tanzu clusters through ArgoCD and help them deliver the SAS suite as a SaaS product to the European comission."
+        - "Help DIGIT in managing Tanzu clusters through ArgoCD and help them deliver the SAS suite as a SaaS product to the European commission."
         - "Assist a Dutch hospital chain set up their Kubernetes GitOps IaC management through Azure pipelines."
-        - "Get SAS integrated in our justice deptartment's environment. This has been a challenge because this is not one big department, but the sum of all local departments which don't share a standard at all. What really proved to be a challenge was the complexity of the environment with the kind of personal data you are handling, which all needed to be handled with a lot of care and were very regulated."
+        - "Get SAS integrated in our justice department's environment. This has been a challenge because this is not one big department, but the sum of all local departments which don't share a standard at all. What really proved to be a challenge was the complexity of the environment with the kind of personal data you are handling, which all needed to be handled with a lot of care and were very regulated."
 
     - employer: "Dominion Experts bvba"
       url: "https://www.dominionexperts.be"
@@ -434,7 +434,7 @@ employment:
         - Symantec Backup Exec
         - Windows
 
-    - employer: Ablynx nv
+    - employer: Ablynx
       url: http://www.ablynx.com/
       position: System Engineer
       start: "2007-10"
@@ -518,7 +518,7 @@ skills:
         - name: GCP
           level: 5
         - name: Azure
-          level: 3
+          level: 5
 
     - name: DevOps
       level: master
@@ -635,6 +635,9 @@ skills:
           level: 4
 
 references:
+  - name: Kasper Van Waes
+    function: Project manager Digital Solutions
+    company: UCB
   - name: Jan Keirse
     function: Lead System Enabling
     company: TVH

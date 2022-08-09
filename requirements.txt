@@ -1,3 +1,5 @@
 pyyaml
-docxtpl==0.8.1
-textract
+jinja2
+markdown
+pdfcrowd
+pdfkit
