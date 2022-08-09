@@ -15,7 +15,7 @@ info:
   image: ""
   quote: |
     What can go wrong, will go wrong!
-    This is why we need to test every aspect, every time.
+    Therefore we need to test every aspect, every time.
 contact:
   phone: "+32 479 45 73 73"
   email: "timothy.vandenbrande@gmail.com"
@@ -63,6 +63,32 @@ projects:
 employment:
   summary: "Years of experience in the DevOps culture."
   history:
+    - employer: "SAS"
+      url: "https://www.sas.com/"
+      position: "Technical Cloud Architect"
+      summary: |
+        My main focus here was enabling customers in getting the SAS Viya suite installed and integrated in their current environment.
+        As an analytic platform it integrates with almost every dataset available in the company, which often requires a complex and well thought out architecture. This gets designed in cooperation with both the customer's business team as well as the customer's technical team and make sure their requirements and use cases align.
+        Once the architecture is approved and in place I needed to support the engineers in getting the SAS software installed and help both the SAS- as the customer's team in getting the local datasets integrated in SAS.
+        Apart from my customer facing consulting tasks, there are also the pre-sales consulting tasks, in which I help pre-sales architects work out sturdier and more modern architectures to fit with the customer's demands. This often starts with me designing a small simplified architecture of the final version and create a PoC to prove our capabilities to the customer.
+      start: "2022-01"
+      current: true
+      keywords:
+        - Architecture
+        - TOGAF
+        - SAS
+        - Azure
+        - Google Cloud
+        - AWS
+        - Kubernetes
+        - Ansible
+        - Docker
+        - ArgoCD
+      highlights:
+        - "Help DIGIT in managing Tanzu clusters through ArgoCD and help them deliver the SAS suite as a SaaS product to the European comission."
+        - "Assist a Dutch hospital chain set up their Kubernetes GitOps IaC management through Azure pipelines."
+        - "Get SAS integrated in our justice deptartment's environment. This has been a challenge because this is not one big department, but the sum of all local departments which don't share a standard at all. What really proved to be a challenge was the complexity of the environment with the kind of personal data you are handling, which all needed to be handled with a lot of care and were very regulated."
+
     - employer: "Dominion Experts bvba"
       url: "https://www.dominionexperts.be"
       position: "Competence Center Lead, SRE/DevOps Architect"
@@ -73,7 +99,7 @@ employment:
         continuous workflow while pushing people to take co-ownership and responsibility within a project.
         By looking at each task from a service perspective, we aim to get more continuity and stability in the work we deliver. 
       start: "2013-09"
-      current: true
+      end: "2022-01"
       keywords:
         - DevOps
         - Architecture
@@ -106,7 +132,7 @@ employment:
         The second part was about validation. We needed to have the platform GxP validated, which meant it was required to qualify installation, operation and performance. My job here was to run the IQ (installation qualification) and in the process, I would try to automate as much as possible of the manual steps. (As I prefer not to repeatedly do the same menial manual tasks.)
         The third part was all about debugging and error detection. Due to having confidential patient data, this platform was designed without any output, to make sure none of the data can get leaked in stack traces. This required me to search blindly when errors occurred, and in turn lead me to create procedures and requests for more visibility in future tasks.
       start: "2020-12"
-      current: true
+      end: "2021-12"
       keywords:
         - DevOps
         - Agile
