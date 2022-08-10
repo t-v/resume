@@ -28,7 +28,7 @@ jobs:
         run: python ./generate_resume.py
       - run: |
           mkdir pages
-          $html=$(ls output | grep html)
+          $html=`ls output | grep html`
           cp output/$html pages/index.html
       - uses: actions/upload-artifact@v3
         with:
