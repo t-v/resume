@@ -2,6 +2,8 @@
 
 [![Generate Resume](https://github.com/t-v/resume/actions/workflows/github-actions.yml/badge.svg)](https://github.com/t-v/resume/actions/workflows/github-actions.yml)
 
+The HTML version of the generated resume: <https://t-v.github.io/resume/>
+
 
 ## Prerequisites
 
