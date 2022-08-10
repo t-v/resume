@@ -61,7 +61,7 @@ jobs:
             cp $asset ./pages/;
           done
           cp ./output/t-v-resume.html ./pages/index.html;
-          echo "<p style="text-align:right;font-size:small;">Last updated on: $TIMEFORMAT</p>" >> ./pages/index.html
+          echo "<p style=\"text-align:right;font-size:small;\">Last updated on: $TIMEFORMAT</p>" >> ./pages/index.html
         env:
           TIMEFORMAT: ${{ steps.time.outputs.time-formatted }}
       - name: Setup Pages
