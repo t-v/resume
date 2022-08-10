@@ -1,4 +1,4 @@
-name: Generate Resume
+name: Release Resume
 
 on:
   push:
@@ -43,6 +43,7 @@ jobs:
           set -x
           assets=()
           for asset in ./output/*; do
+            echo $asset
             assets+=("-a" "$asset")
           done
           echo $assets
