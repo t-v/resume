@@ -50,7 +50,7 @@ jobs:
         id: timeformatted
         uses: nanzm/get-time-action@v1.1
         with:
-          format: 'YYYY-MM-DD HH:mm:ss'
+          format: 'YYYY-MM-DD'
 
       - name: prepare pages upload
         run: |
