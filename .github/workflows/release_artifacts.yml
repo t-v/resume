@@ -39,7 +39,7 @@ jobs:
           format: 'YYYYMMDDHHmmss'
 
       - name: Get Time
-        id: time-formatted
+        id: timeformatted
         uses: nanzm/get-time-action@v1.1
         with:
           timeZone: 8
@@ -57,8 +57,10 @@ jobs:
             echo $asset
             assets+=("-a" "$asset")
           done
+          time=$TIME
+          timeformat=$TIMEFORMAT
           hub release create "${assets[@]}" -m "Curiculum Vitae" -m "My from YAML generated resume." -m "Resume: $TIMEFORMAT" "$TIME"
         env:
-          TIMEFORMAT: ${{ steps.time.outputs.time-formatted }}
+          TIMEFORMAT: ${{ steps.time.outputs.timeformatted }}
           TIME: ${{ steps.time.outputs.time }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
