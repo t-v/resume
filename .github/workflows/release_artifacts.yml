@@ -88,9 +88,9 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            output/t-v-resume.md
-            output/t-v-resume.html
-            output/t-v-resume.pdf
+            output/*.md
+            output/*.html
+            output/*.pdf
 
       # - name: Upload Release Markdown
       #   id: upload-release-md 
