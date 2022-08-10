@@ -50,7 +50,6 @@ jobs:
         id: time-formatted
         uses: nanzm/get-time-action@v1.1
         with:
-          timeZone: 8
           format: 'YYYY-MM-DD HH:mm:ss'
 
       - name: prepare pages upload
