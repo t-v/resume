@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: "pages"
+  group: "release"
   cancel-in-progress: true
 
 jobs:
