@@ -36,6 +36,13 @@ jobs:
         uses: nanzm/get-time-action@v1.1
         with:
           timeZone: 8
+          format: 'YYYYMMDDHHmmss'
+
+      - name: Get Time
+        id: time-formatted
+        uses: nanzm/get-time-action@v1.1
+        with:
+          timeZone: 8
           format: 'YYYY-MM-DD HH:mm:ss'
       
       - name: debug to check if files are still there
@@ -50,9 +57,8 @@ jobs:
             echo $asset
             assets+=("-a" "$asset")
           done
-          echo $assets
-          tag_name="$TIME"
-          hub release create "${assets[@]}" -m "Curiculum Vitae" -m "My from YAML generated resume." -m "Resume: $tag_name" "$tag_name"
+          hub release create "${assets[@]}" -m "Curiculum Vitae" -m "My from YAML generated resume." -m "Resume: $TIME_FORMAT" "$TIME"
         env:
+          TIME_FORMAT: ${{ steps.time.outputs.time-formatted }}
           TIME: ${{ steps.time.outputs.time }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
