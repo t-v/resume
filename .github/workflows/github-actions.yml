@@ -26,10 +26,11 @@ jobs:
         uses: actions/checkout@v2
       - name: Build resume
         run: python ./generate_resume.py
-      - run: |
-          mkdir pages
-          html=ls output | grep html
-          cp output/$html pages/index.html
+      - name: prepare pages upload
+        run: |
+          mkdir pages;
+          html=ls output | grep html;
+          cp output/$html pages/index.html;
       - uses: actions/upload-artifact@v3
         with:
           path: ./output/t-v-resume.md
