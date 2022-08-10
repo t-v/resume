@@ -35,14 +35,12 @@ jobs:
         id: time
         uses: nanzm/get-time-action@v1.1
         with:
-          timeZone: 8
           format: 'YYYYMMDDHHmmss'
 
       - name: Get Time
         id: timeformatted
         uses: nanzm/get-time-action@v1.1
         with:
-          timeZone: 8
           format: 'YYYY-MM-DD HH:mm:ss'
       
       - name: debug to check if files are still there
