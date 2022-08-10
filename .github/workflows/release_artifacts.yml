@@ -52,7 +52,7 @@ jobs:
           done
           echo $assets
           tag_name="$TIME"
-          hub release create "${assets[@]}" -m "$tag_name" "Resume $tag_name"
+          hub release create "${assets[@]}" -m "Resume $tag_name" "$tag_name"
         env:
           TIME: ${{ steps.time.outputs.time }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
