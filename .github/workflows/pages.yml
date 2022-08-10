@@ -46,6 +46,13 @@ jobs:
       - name: Build resume
         run: python ./generate_resume.py
 
+      - name: Get Time
+        id: time-formatted
+        uses: nanzm/get-time-action@v1.1
+        with:
+          timeZone: 8
+          format: 'YYYY-MM-DD HH:mm:ss'
+
       - name: prepare pages upload
         run: |
           mkdir pages;
@@ -54,7 +61,9 @@ jobs:
             cp $asset ./pages/;
           done
           cp ./output/t-v-resume.html ./pages/index.html;
- 
+          echo "<p style="text-align:right;font-size:small;">Last updated on: $TIMEFORMAT</p>" >> ./pages/index.html
+        env:
+          TIMEFORMAT: ${{ steps.time.outputs.time-formatted }}
       - name: Setup Pages
         uses: actions/configure-pages@v1
       - name: Upload artifact
