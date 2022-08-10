@@ -22,63 +22,73 @@ jobs:
           python -m pip install --upgrade pip
           pip install build
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - name: Build resume
-        run: python ./generate_resume.py
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Get Time
-        id: time
-        uses: nanzm/get-time-action@v1.1
+      - name: Build resume
+        run: python ./generate_resume.py
+      - uses: actions/upload-artifact@v3
         with:
-          timeZone: 8
-          format: 'YYYYMMDDHHmmss'
+          path: output/resume.md
+      - uses: actions/upload-artifact@v3
+        with:
+          path: output/resume.html
+      - uses: actions/upload-artifact@v3
+        with:
+          path: output/resume.pdf
+
+      # - name: Get Time
+      #   id: time
+      #   uses: nanzm/get-time-action@v1.1
+      #   with:
+      #     timeZone: 8
+      #     format: 'YYYYMMDDHHmmss'
       
-      - name: debug to check if files are still there
-        run: ls -l output/
-      - name: Create Release
-        id: create_release
-        uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
-        with:
-          tag_name: ${{ steps.time.outputs.time }}
-          release_name: Release ${{ steps.time.outputs.time }}
-          draft: false
-          prerelease: false
-          files: |
-            output/resume.md
-            output/resume.html
-            output/resume.pdf
+      # - name: debug to check if files are still there
+      #   run: ls -l output/
+      # - name: Create Release
+      #   id: create_release
+      #   uses: softprops/action-gh-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      #   with:
+      #     tag_name: ${{ steps.time.outputs.time }}
+      #     release_name: Release ${{ steps.time.outputs.time }}
+      #     draft: false
+      #     prerelease: false
+      #     files: |
+      #       output/resume.md
+      #       output/resume.html
+      #       output/resume.pdf
 
-      - name: Upload Release Markdown
-        id: upload-release-md 
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: ./output/t-v-resume.md
-          asset_name: resume.md
-          asset_content_type: text/markdown
+      # - name: Upload Release Markdown
+      #   id: upload-release-md 
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+      #     asset_path: ./output/t-v-resume.md
+      #     asset_name: resume.md
+      #     asset_content_type: text/markdown
 
-      - name: Upload Release HTML
-        id: upload-release-html
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: ./output/t-v-resume.html
-          asset_name: resume.html
-          asset_content_type: text/html
+      # - name: Upload Release HTML
+      #   id: upload-release-html
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+      #     asset_path: ./output/t-v-resume.html
+      #     asset_name: resume.html
+      #     asset_content_type: text/html
 
-      - name: Upload Release PDF
-        id: upload-release-pdf
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: ./output/t-v-resume.pdf
-          asset_name: resume.pdf
-          asset_content_type: application/pdf
+      # - name: Upload Release PDF
+      #   id: upload-release-pdf
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+      #     asset_path: ./output/t-v-resume.pdf
+      #     asset_name: resume.pdf
+      #     asset_content_type: application/pdf
