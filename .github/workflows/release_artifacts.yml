@@ -57,8 +57,8 @@ jobs:
             echo $asset
             assets+=("-a" "$asset")
           done
-          hub release create "${assets[@]}" -m "Curiculum Vitae" -m "My from YAML generated resume." -m "Resume: $TIME_FORMAT" "$TIME"
+          hub release create "${assets[@]}" -m "Curiculum Vitae" -m "My from YAML generated resume." -m "Resume: $TIMEFORMAT" "$TIME"
         env:
-          TIME_FORMAT: ${{ steps.time.outputs.time-formatted }}
+          TIMEFORMAT: ${{ steps.time.outputs.time-formatted }}
           TIME: ${{ steps.time.outputs.time }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
