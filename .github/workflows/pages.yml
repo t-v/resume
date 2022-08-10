@@ -45,12 +45,15 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Build resume
         run: python ./generate_resume.py
+
       - name: prepare pages upload
         run: |
           mkdir pages;
-          html=$(ls output | grep html);
-          echo $html;
-          cp ./output/$html ./pages/index.html;
+          for asset in ./output/*.html; do
+            echo $asset
+            cp $asset ./pages/;
+          done
+          cp ./output/t-v-resume.html ./pages/index.html;
  
       - name: Setup Pages
         uses: actions/configure-pages@v1
