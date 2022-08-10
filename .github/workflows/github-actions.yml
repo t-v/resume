@@ -29,7 +29,7 @@ jobs:
       - name: prepare pages upload
         run: |
           mkdir pages;
-          html=ls output | grep html;
+          html=$(ls output | grep html);
           echo $html;
           cp ./output/$html ./pages/index.html;
       - uses: actions/upload-artifact@v3
