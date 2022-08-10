@@ -52,7 +52,7 @@ jobs:
           done
           echo $assets
           tag_name="$TIME"
-          hub release create "${assets[@]}" -m "Resume $tag_name" "$tag_name"
+          hub release create "${assets[@]}" -m "Curiculum Vitae" -m "My from YAML generated resume." -m "Resume $tag_name" "$tag_name"
         env:
           TIME: ${{ steps.time.outputs.time }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
