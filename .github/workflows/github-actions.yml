@@ -22,16 +22,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install build
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - name: Checkout code
-        uses: actions/checkout@v2
       - name: Build resume
         run: python ./generate_resume.py
-      - name: prepare pages upload
-        run: |
-          mkdir pages;
-          html=$(ls output | grep html);
-          echo $html;
-          cp ./output/$html ./pages/index.html;
       - uses: actions/upload-artifact@v3
         with:
           path: ./output/t-v-resume.md
@@ -41,17 +33,6 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           path: ./output/t-v-resume.pdf
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v1
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          # Upload entire repository
-          path: './pages/'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@main
 
       # - name: Get Time
       #   id: time
