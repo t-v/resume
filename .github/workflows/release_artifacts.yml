@@ -38,12 +38,14 @@ jobs:
       - name: debug to check if files are still there
         run: ls -l output/
   
-      - run: |
+      - name: release it
+        run: |
           set -x
           assets=()
-          for asset in ./output*; do
+          for asset in ./output/*; do
             assets+=("-a" "$asset")
           done
+          echo $assets
           tag_name="$TIME"
           hub release create "${assets[@]}" -m "$tag_name" "$tag_name"
         env:
