@@ -1,6 +1,8 @@
 # Generation script for a resume
 
-[![Generate Resume](https://github.com/t-v/resume/actions/workflows/github-actions.yml/badge.svg)](https://github.com/t-v/resume/actions/workflows/github-actions.yml)
+[![Release Resume](https://github.com/t-v/resume/actions/workflows/release_artifacts.yml/badge.svg)](https://github.com/t-v/resume/actions/workflows/release_artifacts.yml)
+[![Deploy static content to Pages](https://github.com/t-v/resume/actions/workflows/pages.yml/badge.svg)](https://github.com/t-v/resume/actions/workflows/pages.yml)
+
 
 The HTML version of the generated resume: <https://t-v.github.io/resume/>
 
