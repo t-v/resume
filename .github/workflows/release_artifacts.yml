@@ -61,6 +61,6 @@ jobs:
           timeformat=$TIMEFORMAT
           hub release create "${assets[@]}" -m "Curiculum Vitae" -m "My from YAML generated resume." -m "Resume: $TIMEFORMAT" "$TIME"
         env:
-          TIMEFORMAT: ${{ steps.time.outputs.timeformatted }}
+          TIMEFORMAT: ${{ steps.timeformatted.outputs.time }}
           TIME: ${{ steps.time.outputs.time }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
