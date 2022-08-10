@@ -3,6 +3,11 @@ name: Generate Resume
 on:
   push:
     branches: [ "master" ]
+  workflow_dispatch:
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -32,6 +37,18 @@ jobs:
       
       - name: debug to check if files are still there
         run: ls -l output/
+  
+      - run: |
+          set -x
+          assets=()
+          for asset in ./output*; do
+            assets+=("-a" "$asset")
+          done
+          tag_name="$TIME"
+          hub release create "${assets[@]}" -m "$tag_name" "$tag_name"
+        env:
+          TIME: ${{ steps.time.outputs.time }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: Create Release
       #   id: create_release
@@ -77,20 +94,21 @@ jobs:
       #     asset_name: resume.pdf
       #     asset_content_type: application/pdf
   
-      - name: Create Release
-        id: create_release
-        uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
-        with:
-          tag_name: ${{ steps.time.outputs.time }}
-          release_name: Release ${{ steps.time.outputs.time }}
-          draft: false
-          prerelease: false
-          files: |
-            output/*.md
-            output/*.html
-            output/*.pdf
+      # - name: Create Release
+      #   id: create_release
+      #   uses: softprops/action-gh-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      #   with:
+      #     tag_name: ${{ steps.time.outputs.time }}
+      #     name: Release ${{ steps.time.outputs.time }}
+      #     draft: false
+      #     prerelease: false
+      #     fail_on_unmatched_files: true
+      #     files: |
+      #       output/*.md
+      #       output/*.html
+      #       output/*.pdf
 
       # - name: Upload Release Markdown
       #   id: upload-release-md 
