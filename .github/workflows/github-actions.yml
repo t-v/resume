@@ -30,7 +30,8 @@ jobs:
         run: |
           mkdir pages;
           html=ls output | grep html;
-          cp output/$html pages/index.html;
+          echo $html;
+          cp ./output/$html ./pages/index.html;
       - uses: actions/upload-artifact@v3
         with:
           path: ./output/t-v-resume.md
