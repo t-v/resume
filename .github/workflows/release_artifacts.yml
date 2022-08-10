@@ -36,7 +36,7 @@ jobs:
         uses: nanzm/get-time-action@v1.1
         with:
           timeZone: 8
-          format: 'YYYYMMDDHHmmss'
+          format: 'YYYY-MM-DD HH:mm:ss'
       
       - name: debug to check if files are still there
         run: ls -l output/
