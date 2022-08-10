@@ -31,13 +31,13 @@ jobs:
           ls -lR
       - uses: actions/upload-artifact@v3
         with:
-          path: output/resume.md
+          path: ./output/t-v-resume.md
       - uses: actions/upload-artifact@v3
         with:
-          path: output/resume.html
+          path: ./output/t-v-resume.html
       - uses: actions/upload-artifact@v3
         with:
-          path: output/resume.pdf
+          path: ./output/t-v-resume.pdf
 
       # - name: Get Time
       #   id: time
