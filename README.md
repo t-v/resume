@@ -6,6 +6,8 @@
 
 The HTML version of the generated resume: <https://t-v.github.io/resume/>
 
+The PDF or Markdown versions are available for download here: <https://github.com/t-v/resume/releases/latest>
+
 
 ## Prerequisites
 
