@@ -553,6 +553,8 @@ skills:
           level: 5
         - name: Concourse CI
           level: 5
+        - name: ArgoCD
+          level: 4
         - name: Azure DevOps
           level: 4
         - name: Google Cloud Build
