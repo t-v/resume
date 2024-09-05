@@ -68,12 +68,19 @@ jobs:
           TIMEFORMAT: ${{ steps.timeformatted.outputs.time }}
       - name: Setup Pages
         uses: actions/configure-pages@v1
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: "github-pages"
-          # Upload entire repository
-          path: './pages/'
+      #- name: Upload artifact
+      #  uses: actions/upload-artifact@v4
+      #  with:
+      #    name: "github-pages"
+      #    # Upload entire repository
+      #    path: './pages/'
+      #- name: Deploy to GitHub Pages
+      #  id: deployment
+      #  uses: actions/deploy-pages@v4
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: gh-pages
+          build_dir: pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
