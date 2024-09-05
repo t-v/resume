@@ -51,4 +51,4 @@ jobs:
           artifacts: "./output/*"
           body: "My from YAML generated resume.\nResume: $TIMEFORMAT $TIME"
           name: "Curiculum Vitae"
-          tag: "Curiculum Vitae"
+          tag: "CuriculumVitae"
