@@ -62,6 +62,7 @@ jobs:
           cp ./output/t-v-resume.html ./pages/index.html;
           timeformat=$TIMEFORMAT
           echo "<p style=\"text-align:right;font-size:small;color:grey;\">Last updated on: $timeformat</p>" >> ./pages/index.html
+          chmod -R a+rX ./pages
           ls -la ./pages/
         env:
           TIMEFORMAT: ${{ steps.timeformatted.outputs.time }}
