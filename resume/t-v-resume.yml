@@ -65,6 +65,25 @@ employment:
   history:
     - employer: "SAS nv"
       url: "https://www.sas.com/"
+      position: "Sr System Architect"
+      summary: |
+        As I became part of the R&D IoT department, my main focus is delivering steady architectures and proof of concepts to improve the current SAS offering for edge devices.
+        The current focus is to be able to deliver an application that allows customers to enhance their data and documents, and query them as if you were having  a natural conversation.
+      start: "2023-11"
+      current: true
+      keywords:
+        - Architecture
+        - SAS
+        - Azure
+        - Kubernetes
+        - Docker
+        - Python
+      highlights:
+        - "Main GenAI PoC to show off RAG capabilities"
+        - "Re-architect configuration management within ESP/ESM"
+
+    - employer: "SAS nv"
+      url: "https://www.sas.com/"
       position: "Technical Cloud Architect"
       summary: |
         My main focus here was enabling customers in getting the SAS Viya suite installed and integrated in their current environment.
@@ -72,7 +91,7 @@ employment:
         Once the architecture is approved and in place, I needed to support the engineers in getting the SAS software installed and help both the SAS- as the customer's team in getting the local datasets integrated in SAS.
         Apart from my customer facing consulting tasks, there are also the pre-sales consulting tasks, in which I help pre-sales architects work out sturdier and more modern architectures to fit with the customer's demands. This often starts with me designing a small, simplified architecture of the final version and create a PoC to prove our capabilities to the customer.
       start: "2022-01"
-      current: true
+      end: "2023-10"
       keywords:
         - Architecture
         - TOGAF
