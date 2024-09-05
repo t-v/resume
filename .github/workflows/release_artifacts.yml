@@ -46,19 +46,8 @@ jobs:
       - name: debug to check if files are still there
         run: ls -l output/
   
-      - name: release it
-        run: |
-          set -x
-          assets=()
-          ls -l
-          for asset in ./output/*; do
-            echo $asset
-            assets+=("-a" "$asset")
-          done
-          time=$TIME
-          timeformat=$TIMEFORMAT
-          hub release create "${assets[@]}" -m "Curiculum Vitae" -m "My from YAML generated resume." -m "Resume: $TIMEFORMAT" "$TIME"
-        env:
-          TIMEFORMAT: ${{ steps.timeformatted.outputs.time }}
-          TIME: ${{ steps.time.outputs.time }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "./output/*"
+          body: "My from YAML generated resume.\nResume: $TIMEFORMAT $TIME"
+          name: "Curiculum Vitae"
