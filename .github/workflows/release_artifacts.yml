@@ -49,6 +49,6 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "./output/*"
-          body: "My from YAML generated resume.\nResume: $TIMEFORMAT $TIME"
+          body: "My from YAML generated resume.\nResume: ${{ timeformatted }}"
           name: "Curiculum Vitae"
-          tag: "CuriculumVitae"
+          tag: "${{ time }}"
