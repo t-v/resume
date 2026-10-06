@@ -134,8 +134,10 @@ function texPageBreaks(tex, file) {
 //
 //   - icons: moderncv defaults every contact/social icon to its own `darkgrey`,
 //     so they are repainted in the accent colour.
-//   - employer and dates: \cventry has no colour hook, so it is redefined. This
-//     mirrors moderncvbodyiii.sty, with \color added to the relevant cells.
+//   - dates: \cventry has no colour hook, so it is redefined. This mirrors
+//     moderncvbodyiii.sty, with \color added to the date cell. The employer is
+//     deliberately left at full contrast: it is headline information, not
+//     metadata, and greying it reads as demoting past employers.
 //   - keywords: patched in the body text further down, see texKeywords().
 function texColours(tex, file) {
   const block = String.raw`% ${MARKER}: match the HTML's colour weighting
@@ -153,7 +155,7 @@ function texColours(tex, file) {
       and
       test {\ifstrempty{#5}}}%
       {}%
-      {{\bfseries\color{color2}#4} & {\bfseries\color{color2}#5}\\}%
+      {{\bfseries #4} & {\bfseries\color{color2}#5}\\}%
     {\itshape #3\ifstrempty{#6}{}{, #6}} & {\itshape\color{color2}#2}\\%
   \end{tabular*}%
   \ifx&#7&%

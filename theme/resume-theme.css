@@ -37,17 +37,19 @@ body {
   border-bottom: 2px solid var(--brand-accent);
 }
 
-/* Entry headings: muted grey, like the old h3. */
+/* Employer/project name: the strongest text in an entry. Kept at full contrast
+   so past employers read as headline information rather than as metadata. */
 .resume-entry-title {
-  color: var(--brand-muted);
-  font-weight: 600;
+  color: var(--text-color-primary);
+  font-weight: 700;
 }
 
 .resume-entry-date {
   color: var(--brand-muted);
 }
 
-/* Links: plain until hovered, then accent coloured. */
+/* Links: plain until hovered, then accent coloured and underlined. Employer and
+   project names are links, so they stay black and bold until pointed at. */
 a {
   color: inherit;
   text-decoration-color: transparent;
