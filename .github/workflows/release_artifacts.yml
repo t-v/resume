@@ -5,6 +5,9 @@ on:
     branches: [ "master" ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 concurrency:
   group: "release"
   cancel-in-progress: true
@@ -13,42 +16,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: '3.x'
-      - name: Install dependencies
-        run: |
-          sudo apt update
-          sudo apt install wget -y
-          wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb
-          sudo apt install ./wkhtmltox_0.12.6-1.focal_amd64.deb -y
-          python -m pip install --upgrade pip
-          pip install build
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - uses: actions/checkout@v4
 
+      # scripts/build.sh runs the pinned yamlresume container, which already
+      # ships XeTeX and the fonts, so there is nothing else to install here.
+      # It fails the job on schema violations.
       - name: Build resume
-        run: python ./generate_resume.py
+        run: ./scripts/build.sh
 
-      - name: Get Time
-        id: time
-        uses: nanzm/get-time-action@v1.1
-        with:
-          format: 'YYYYMMDDHHmmss'
+      - name: Collect release metadata
+        id: meta
+        run: |
+          echo "tag=$(date -u +'%Y%m%d%H%M%S')" >> "$GITHUB_OUTPUT"
+          echo "built=$(date -u +'%Y-%m-%d %H:%M:%S') UTC" >> "$GITHUB_OUTPUT"
 
-      - name: Get Time
-        id: timeformatted
-        uses: nanzm/get-time-action@v1.1
-        with:
-          format: 'YYYY-MM-DD HH:mm:ss'
-      
-      - name: debug to check if files are still there
+      - name: Show generated artifacts
         run: ls -l output/
-  
+
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "./output/*"
-          body: "My from YAML generated resume.\nResume: ${{ steps.timeformatted.outputs.time }}"
-          name: "Curiculum Vitae"
-          tag: "${{ steps.time.outputs.time }}"
+          artifacts: "output/t-v-resume.pdf,output/t-v-resume.docx,output/t-v-resume.html,output/t-v-resume.md,output/t-v-resume.tex"
+          body: "My from YAML generated resume.\nResume: ${{ steps.meta.outputs.built }}"
+          name: "Curriculum Vitae"
+          tag: "${{ steps.meta.outputs.tag }}"

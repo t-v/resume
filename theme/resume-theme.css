@@ -1,0 +1,78 @@
+/*
+ * Brand overrides for the yamlresume "calm" HTML template.
+ *
+ * This file only contains rules. The brand colours, fonts and the webfont
+ * import are injected as CSS custom properties by scripts/apply-theme.mjs,
+ * which is the single source of truth for the palette (it also recolours the
+ * LaTeX/PDF output with the same values).
+ *
+ * Available custom properties: --brand-accent, --brand-muted, --brand-font
+ */
+
+body {
+  font-family: var(--brand-font);
+}
+
+/* Header: name in the accent colour, headline in the muted grey, mirroring
+   the two-tone title of the previous Jinja2 template. */
+.resume-name {
+  color: var(--brand-accent);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.resume-headline {
+  color: var(--brand-muted);
+  font-weight: 500;
+}
+
+.resume-contact-info {
+  color: var(--brand-muted);
+}
+
+/* Section headings: accent coloured with a matching rule underneath. */
+.resume-section-title {
+  color: var(--brand-accent);
+  font-weight: 600;
+  border-bottom: 2px solid var(--brand-accent);
+}
+
+/* Entry headings: muted grey, like the old h3. */
+.resume-entry-title {
+  color: var(--brand-muted);
+  font-weight: 600;
+}
+
+.resume-entry-date {
+  color: var(--brand-muted);
+}
+
+/* Links: plain until hovered, then accent coloured. */
+a {
+  color: inherit;
+  text-decoration-color: transparent;
+}
+
+a:hover {
+  color: var(--brand-accent);
+  text-decoration-color: var(--brand-accent);
+}
+
+/* Keyword lists read as metadata rather than body copy. */
+.resume-labeled-list {
+  color: var(--brand-muted);
+}
+
+/* Build stamp appended by scripts/apply-theme.mjs. */
+.resume-updated {
+  margin-top: 2rem;
+  text-align: right;
+  font-size: 0.8rem;
+  color: var(--brand-muted);
+}
+
+@media print {
+  .resume-updated {
+    display: none;
+  }
+}

@@ -1,33 +1,184 @@
-# Generation script for a resume
+# Resume as code
 
 [![Release Resume](https://github.com/t-v/resume/actions/workflows/release_artifacts.yml/badge.svg)](https://github.com/t-v/resume/actions/workflows/release_artifacts.yml)
 [![Deploy static content to Pages](https://github.com/t-v/resume/actions/workflows/pages.yml/badge.svg)](https://github.com/t-v/resume/actions/workflows/pages.yml)
 
-
 The HTML version of the generated resume: <https://t-v.github.io/resume/>
 
-The PDF or Markdown versions are available for download here: <https://github.com/t-v/resume/releases/latest>
+The PDF, DOCX and Markdown versions are available for download here: <https://github.com/t-v/resume/releases/latest>
 
+The resume is a single YAML file following the [YAMLResume](https://yamlresume.dev)
+schema. YAMLResume renders it to HTML, PDF, DOCX and Markdown, so there are no
+hand-maintained templates in this repository anymore.
+
+## Layout
+
+| Path | Purpose |
+| --- | --- |
+| [`resume/t-v-resume.yml`](resume/t-v-resume.yml) | The resume itself: content, locale and the four output layouts |
+| [`scripts/build.sh`](scripts/build.sh) | Builds every format through the pinned YAMLResume container |
+| [`scripts/apply-theme.mjs`](scripts/apply-theme.mjs) | Applies the personal branding that the schema cannot express |
+| [`scripts/make-fonts.py`](scripts/make-fonts.py) | Regenerates the static Quicksand faces in `fonts/` |
+| [`theme/resume-theme.css`](theme/resume-theme.css) | The CSS rules for the branded HTML output |
+| `fonts/` | Static Quicksand (OFL), mounted into the container for the PDF |
+| `output/` | Generated artifacts, ignored by git |
 
 ## Prerequisites
 
-Install python: <https://www.python.org/downloads/>
+- [Docker](https://docs.docker.com/get-started/get-docker/) — the build runs
+  inside `yamlresume/yamlresume`, which ships XeTeX, the LaTeX packages and the
+  fonts needed for the PDF.
+- [Node.js](https://nodejs.org/) — only to run the theming script, which has no
+  dependencies.
 
-Install the prerequisites:
-
-``` bash
-pip install -r requirements.txt
-```
-
-Install the font: <https://fonts.google.com/specimen/Quicksand>
+Nothing else needs to be installed; there is no local TeX or Python setup.
 
 ## Usage
 
-Make a resume based on the YAML or JSON template and save it in the `resume` directory.
-After that, run the generator:
+Build every format into `output/`:
 
-``` bash
-python ./generate_resume_generator.py
+```bash
+./scripts/build.sh
 ```
 
-Yes, it is __this__ easy.
+This produces `t-v-resume.html`, `.pdf`, `.docx`, `.md` and `.tex`.
+
+To build a different source file or into a different directory:
+
+```bash
+RESUME=resume/other.yml OUTPUT_DIR=build ./scripts/build.sh
+```
+
+Both paths must stay relative to the repository root: only the repository is
+mounted into the container, so an absolute path would make YAMLResume write
+inside the container and the artifacts would be lost. The script refuses
+absolute paths rather than failing silently.
+
+### Editing
+
+The first line of the resume pins the JSON schema:
+
+```yaml
+# yaml-language-server: $schema=https://yamlresume.dev/schema.json
+```
+
+With the [YAML Language Server](https://github.com/redhat-developer/yaml-language-server)
+installed, your editor will autocomplete the fields and flag invalid values as
+you type.
+
+To check the file without building it:
+
+```bash
+docker run --rm -u "$(id -u):$(id -g)" -e HOME=/tmp -v "$PWD":/home/yamlresume \
+  yamlresume/yamlresume:v0.16.2 validate resume/t-v-resume.yml
+```
+
+> **Note**
+> As of v0.16.2, neither `yamlresume validate` nor `yamlresume build` reports a
+> schema violation through its exit code — both exit `0` and keep rendering, so
+> neither can be used as a CI gate on its own. `scripts/build.sh` therefore
+> matches on the `Resume validation passed` summary line and aborts the build
+> when it is missing.
+
+### Things worth knowing about the schema
+
+- `summary` fields accept a small Markdown subset: bold, italic, links and
+  (nested) lists. Highlights are plain bullets inside `summary`.
+- Summaries are capped at 1024 characters and keywords at 32.
+- LaTeX escaping is automatic. Write `&`, `%`, `#` and `_` as-is.
+- An ongoing role is expressed by leaving `endDate` empty, which renders as
+  "Present".
+- `x-sections` at the bottom of the resume is a YAML anchor, not a schema field.
+  It keeps the section order and the section names in one place instead of
+  repeating them for each of the four layouts.
+
+## Theming
+
+YAMLResume templates are not forkable: `layouts[].template` only accepts the
+built-in template ids. Everything that *can* be expressed through the schema —
+font family and size, spacing, page margins, section order and section names —
+lives in the resume YAML.
+
+What the schema does not expose is patched in after the build by
+[`scripts/apply-theme.mjs`](scripts/apply-theme.mjs):
+
+- **HTML** — the `calm` template is built on CSS custom properties, so the
+  palette and [`theme/resume-theme.css`](theme/resume-theme.css) are injected as
+  a `<style>` block, along with the Quicksand webfont and the "last updated"
+  footer. The template's "Generated by YAMLResume" credit is removed.
+- **PDF** — `moderncv` only ships named colour schemes, so `color1` and `color2`
+  are redefined before XeTeX runs. Redefining them is not enough on its own:
+  `moderncvstyle<style>.sty` copies them into every derived colour
+  (`sectioncolor`, `lastnamecolor`, `bodyrulecolor`, …) with `\colorlet`, which
+  resolves immediately. The script therefore also moves `\moderncvstyle` below
+  the new definitions, so the style derives from the brand palette instead of
+  from black.
+- **PDF** — YAMLResume emits an `\href` override that underlines every link
+  regardless of `typography.links.underline`, so that block is stripped.
+- **PDF** — nothing holds a `\cventry` together, so LaTeX would strand an
+  employer/position/date header at the foot of a page with its body overleaf.
+  Each entry is prefixed with `\needspace` to reserve room for the header plus a
+  few body lines, and widow/orphan penalties are maxed out. The `needspace`
+  package is not in the build image, so its macro is inlined.
+- **PDF** — the LaTeX templates right-align skill keywords with `\hfill`, which
+  produces ragged gaps of wildly different widths and wraps long lists back to
+  the left margin. The keywords are moved onto their own line instead, matching
+  the HTML.
+- **PDF** — moderncv prints the employer, the dates and the keyword lists in flat
+  black, which reads far heavier than the HTML, where they are grey and only the
+  body copy is black. `\cventry` is redefined to colour those cells, and the
+  keyword lists are greyed in place.
+- **PDF** — contact icons default to moderncv's own `darkgrey`, and the profile
+  icons that YAMLResume writes straight into `\extrainfo` have no colour at all,
+  so they inherit the grey address colour. Both are repainted in the accent
+  colour, so the header reads like the HTML one.
+
+One related setting is worth calling out because it is a layout decision rather
+than a preference: the LaTeX layout sets `advanced.showUrls: false`. With it on,
+moderncv prints the employer and its URL as two cells of one fixed-width row, so
+a long employer name runs straight into its own URL. Turning it off makes the
+employer name the hyperlink, exactly like the HTML template, and the links stay
+clickable in the PDF.
+
+The palette lives in a single `BRAND` constant at the top of that script.
+
+### Fonts
+
+The PDF and the HTML both use Quicksand. The build container has no Quicksand,
+and Google only publishes it as a *variable* font, which XeTeX cannot use
+properly: fontconfig resolves a bare `Quicksand` to the variable font's default
+instance (Light) and an explicit `BoldFont={Quicksand Bold}` fails to resolve,
+so the PDF would come out entirely in Light with no real bold.
+
+[`scripts/make-fonts.py`](scripts/make-fonts.py) therefore instances the two
+weights the PDF needs into standalone static faces and rewrites their name
+tables so fontconfig reports a plain `Quicksand` family with `Regular` and
+`Bold`. The results are committed to `fonts/` (with the OFL licence) so builds
+stay offline, and [`scripts/build.sh`](scripts/build.sh) mounts that directory
+into the container and refreshes the font cache before compiling.
+
+Only re-run it to change the weights:
+
+```bash
+pip install fonttools
+python3 scripts/make-fonts.py
+```
+
+The DOCX references Quicksand by name — readers without it installed will see
+their default sans. The PDF embeds the font and is the canonical download.
+
+## Pipelines
+
+| Workflow | Trigger | Result |
+| --- | --- | --- |
+| [`pages.yml`](.github/workflows/pages.yml) | push to `master`, manual | Publishes the branded HTML to GitHub Pages |
+| [`release_artifacts.yml`](.github/workflows/release_artifacts.yml) | push to `master`, manual | Publishes PDF, DOCX, HTML, Markdown and TeX as a release |
+
+Both call `scripts/build.sh`, so a local build and a CI build run the exact same
+pinned container.
+
+### Upgrading YAMLResume
+
+Change the tag in [`scripts/build.sh`](scripts/build.sh)
+(`YAMLRESUME_IMAGE=yamlresume/yamlresume:vX.Y.Z`) and rebuild. Pinning the image
+is what pins the renderer, the LaTeX packages and the fonts all at once.

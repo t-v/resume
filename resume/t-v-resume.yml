@@ -1,97 +1,86 @@
----
-name: "Timothy Vandenbrande"
-meta:
-  version: "20220809"
-info:
-  firstname: Timothy
-  surname: Vandenbrande
-  birth: "1984-06-06"
-  nationality: Belgian
-  gender: male
-  city: Geraardsbergen
-  label: "DevOps Architect"
-  characterClass: Architect
-  brief: ""
-  image: ""
-  quote: |
-    What can go wrong, will go wrong!
-    Therefore, we need to test every aspect, every time.
-contact:
-  phone: "+32 479 45 73 73"
-  email: "timothy.vandenbrande@gmail.com"
-location:
-  address: "Gemeentestraat 153"
-  city: Geraardsbergen
-  code: "9500"
-  country: BE
-social:
-  - label: GitHub
-    network: GitHub
-    user: t-v
-    url: "https://github.com/t-v"
-  - label: LinkedIn
-    network: LinkedIn
-    user: timothy-vandenbrande
-    url: https://www.linkedin.com/in/timothy-vandenbrande
-projects:
-  - title: Ansible
-    category: FOSS
-    role: contributor
-    url: "https://www.ansible.com/"
-    start: "2015-09"
-    repo: "https://github.com/ansible/ansible"
-    description: "Ansible is the simplest way to automate apps and IT infrastructure. Application Deployment + Configuration Management + Continuous Delivery."
-    summary: "I created a module to automate RedHat Virtualization VM management. This way we could manage our virtualised infrastructure in an IaC fashion. I also created a module to control Windows Firewall since that was something we required for our Windows automation."
-    keywords:
-      - Python
-      - YAML
-      - Jinja2
-      - Powershell
-  - title: "Cthulhu Dawn Chronicles"
-    category: FOSS
-    role: creator
-    url: "https://t_v.github.io/chronicles/"
-    start: "2015-09"
-    repo: "https://github.com/t_v/chronicles"
-    description: "The adventures of Cthulhu Dawn while trying to defeat a new evil."
-    summary: "I helped a friend of mine to visualize the fanfiction she wrote."
-    keywords:
-    - HTML
-    - CSS
-    - Js
+# yaml-language-server: $schema=https://yamlresume.dev/schema.json
+#
+# YAMLResume provides a builtin schema to validate resumes and help avoid lots
+# of low level mistakes.
+#
+# You need to install https://github.com/redhat-developer/yaml-language-server
+# in order to get the best editing experience in your choice of editor/IDE.
+#
+# ref:
+# - https://yamlresume.dev/docs/compiler/schema
+# - https://yamlresume.dev/docs/compiler/schema/json
 
-employment:
-  summary: "Years of experience in the DevOps culture."
-  history:
-    - employer: "SAS nv"
-      url: "https://www.sas.com/"
-      position: "Sr System Architect"
+---
+content:
+  basics:
+    name: Timothy Vandenbrande
+    headline: DevOps Architect
+    phone: "+32 479 45 73 73"
+    email: timothy.vandenbrande@gmail.com
+    url: https://t-v.github.io/resume/
+    summary: |
+      *What can go wrong, will go wrong! Therefore, we need to test every aspect, every time.*
+
+      - Architect with a track record since 2007, of which over a decade spent in the DevOps culture: automating lifecycles, designing platforms and coaching the teams that run them
+      - Designs and delivers cloud and container architectures on Azure, GCP and AWS, with Kubernetes, Ansible and GitOps as the backbone
+      - Translates business requirements into architectures that survive contact with reality, from pre-sales proof of concept to production hand-over
+      - Comfortable at both ends of the stack: hardware and virtualization lifecycles on one side, GenAI and retrieval architectures on the other
+      - Leads by enabling: competence center lead, coach and mentor who prefers raising the team's baseline over being the single point of knowledge
+
+  location:
+    address: Gemeentestraat 153
+    city: Geraardsbergen
+    region: East Flanders
+    country: Belgium
+    postalCode: "9500"
+
+  profiles:
+    - network: GitHub
+      username: t-v
+      url: https://github.com/t-v
+    - network: LinkedIn
+      username: timothy-vandenbrande
+      url: https://www.linkedin.com/in/timothy-vandenbrande
+
+  work:
+    - name: SAS nv
+      url: https://www.sas.com/
+      position: Senior Integration Architect
+      startDate: "2023-11"
+      endDate:
       summary: |
         As I became part of the R&D IoT department, my main focus is delivering steady architectures and proof of concepts to improve the current SAS offering for edge devices.
-        The current focus is to be able to deliver an application that allows customers to enhance their data and documents, and query them as if you were having  a natural conversation.
-      start: "2023-11"
-      current: true
+
+        The most visible result of this is **SAS Retrieval Agent Manager**. It started out as my GenAI proof of concept, an application that allows customers to enhance their data and documents, and query them as if you were having a natural conversation. Since then it has grown into a full SAS offering, built as a direct continuation of the architecture and the development I delivered, and it has fully moved to our development department which now owns the product and its release cycle.
+
+        - Architected and built the GenAI/RAG proof of concept that grew into SAS Retrieval Agent Manager, now a full SAS offering
+        - Handed the proof of concept over to the development department as a productized and supported offering
+        - Re-architecting configuration management within ESP/ESM so edge deployments stay reproducible at scale
       keywords:
         - Architecture
+        - GenAI
+        - RAG
+        - LLM
+        - Vector databases
         - SAS
         - Azure
         - Kubernetes
         - Docker
         - Python
-      highlights:
-        - "Main GenAI PoC to show off RAG capabilities"
-        - "Re-architect configuration management within ESP/ESM"
 
-    - employer: "SAS nv"
-      url: "https://www.sas.com/"
-      position: "Technical Cloud Architect"
+    - name: SAS nv
+      url: https://www.sas.com/
+      position: Senior Technical Cloud Architect
+      startDate: "2022-01"
+      endDate: "2023-10"
       summary: |
-        My main focus here was enabling customers in getting the SAS Viya suite installed and integrated in their current environment.
-        As an analytic platform it integrates with almost every dataset available in the company, which often requires a complex and well thought out architecture. This gets designed in cooperation with both the customer's business team as well as the customer's technical team and make sure their requirements and use cases align.
-        Once the architecture is approved and in place, I needed to support the engineers in getting the SAS software installed and help both the SAS- as the customer's team in getting the local datasets integrated in SAS.
-        Apart from my customer facing consulting tasks, there are also the pre-sales consulting tasks, in which I help pre-sales architects work out sturdier and more modern architectures to fit with the customer's demands. This often starts with me designing a small, simplified architecture of the final version and create a PoC to prove our capabilities to the customer.
-      start: "2022-01"
-      end: "2023-10"
+        My main focus here was enabling customers in getting the SAS Viya suite installed and integrated in their current environment. As an analytic platform it integrated with almost every dataset in the company, which required a complex, well thought out architecture, designed together with the customer's business and technical teams so their requirements and use cases aligned.
+
+        Next to the customer facing consulting I helped pre-sales architects work out sturdier and more modern architectures, usually starting from a simplified design of the final version and a PoC to prove our capabilities.
+
+        - Helped DIGIT manage Tanzu clusters through ArgoCD and deliver the SAS suite as a SaaS product to the European Commission
+        - Assisted a Dutch hospital chain in setting up Kubernetes GitOps IaC management through Azure pipelines
+        - Integrated SAS into our justice department: not one big department but the sum of all local ones, with no shared standard, heavily regulated and handling sensitive personal data
       keywords:
         - Architecture
         - TOGAF
@@ -103,22 +92,23 @@ employment:
         - Ansible
         - Docker
         - ArgoCD
-      highlights:
-        - "Help DIGIT in managing Tanzu clusters through ArgoCD and help them deliver the SAS suite as a SaaS product to the European commission."
-        - "Assist a Dutch hospital chain set up their Kubernetes GitOps IaC management through Azure pipelines."
-        - "Get SAS integrated in our justice department's environment. This has been a challenge because this is not one big department, but the sum of all local departments which don't share a standard at all. What really proved to be a challenge was the complexity of the environment with the kind of personal data you are handling, which all needed to be handled with a lot of care and were very regulated."
 
-    - employer: "Dominion Experts bvba"
-      url: "https://www.dominionexperts.be"
-      position: "Competence Center Lead, SRE/DevOps Architect"
+    - name: Dominion Experts bvba
+      url: https://www.dominionexperts.be
+      position: Competence Center Lead, SRE/DevOps Architect
+      startDate: "2013-09"
+      endDate: "2022-01"
       summary: |
-        My main function is to lead a DevOps competence center. DevOps evokes thoughts of hip and trendy
-        new tools which we utilized to show how much easier life can be with fail/fool-proof automating of
-        even the most insignificant task. However, just as important is shifting the mindset to have a more
-        continuous workflow while pushing people to take co-ownership and responsibility within a project.
-        By looking at each task from a service perspective, we aim to get more continuity and stability in the work we deliver. 
-      start: "2013-09"
-      end: "2022-01"
+        My main function was to lead a DevOps competence center. DevOps evokes thoughts of hip and trendy new tools which we utilized to show how much easier life can be with fail/fool-proof automating of even the most insignificant task. Just as important was shifting the mindset towards a continuous workflow while pushing people to take co-ownership and responsibility within a project. By looking at each task from a service perspective, we got more continuity and stability in the work we delivered.
+
+        The assignments listed below were delivered as part of this role.
+
+        - Automated the lifecycle of different platforms and applications
+        - Predicted growth and requirements, and documented new flows
+        - Built pipelines and inspired colleagues in the DevOps way of life
+        - Checked that the internal competences stayed in line with the market
+        - Guided colleagues on their external projects, recruited core skills, and coached on performance and behavior
+        - Presented new technologies and how to implement them within our vision
       keywords:
         - DevOps
         - Architecture
@@ -127,56 +117,39 @@ employment:
         - Automation
         - Envisioning
         - Agile
-      highlights:
-        - "Automate the lifecycle of different platforms and application"
-        - "Predict growth and requirements"
-        - "Document new flows"
-        - "Build pipelines"
-        - "Inspire colleagues in the DevOps way of life"
-        - "Check if the internal competences are still in-line with the market"
-        - "Guide colleagues on their external projects"
-        - "Recruit core skills"
-        - "Performance based coaching"
-        - "Behavior based coaching"
-        - "Present new technologies and how to implement it within our vision"
 
-    - employer: "UCB"
-      url: "https://www.ucb.com/"
-      position: "Technical Coordinator"
+    - name: UCB
+      url: https://www.ucb.com/
+      position: Technical Coordinator
+      startDate: "2020-12"
+      endDate: "2021-12"
       summary: |
-        I was solely responsible for the technical coordination of the MyUCB project. This project's main purpose was to be the platform for patient <-> doctor interaction and to have the required feedback for the clinical studies.
-        As the platform is used for clinical studies, this also means the platform needs to be fully GxP validated before it can be released to the study as this uses confidential patient data.
-        As a Technical Coordinator my job had 3 very distinct parts.
-        The first one was as a scrum master/PO. This meant taking care of the DevOps backlog, making sure the agile rituals were followed and that the necessary stories were added to make sure progress was made into automating as much as possible.
-        The second part was about validation. We needed to have the platform GxP validated, which meant it was required to qualify installation, operation and performance. My job here was to run the IQ (installation qualification) and in the process, I would try to automate as much as possible of the manual steps. (As I prefer not to repeatedly do the same menial manual tasks.)
-        The third part was all about debugging and error detection. Due to having confidential patient data, this platform was designed without any output, to make sure none of the data can get leaked in stack traces. This required me to search blindly when errors occurred, and in turn lead me to create procedures and requests for more visibility in future tasks.
-      start: "2020-12"
-      end: "2021-12"
+        I was solely responsible for the technical coordination of the MyUCB project, the platform for patient to doctor interaction that gathered the required feedback for clinical studies. Because it was used for clinical studies and held confidential patient data, the platform had to be fully GxP validated before it could be released.
+
+        The role had three distinct parts. As scrum master/PO I took care of the DevOps backlog, made sure the agile rituals were followed and that the stories needed to automate our work got written. For validation we had to qualify installation, operation and performance. I ran the IQ and automated as many manual steps as I could. The third part was debugging and error detection: the platform was deliberately designed without any output so no data could leak through stack traces, which meant searching blindly whenever errors occurred and led me to request more visibility later on.
+
+        - Tried to automate everything
+        - Made sure we delivered on the promises made
+        - Debugged with blindfolds on
       keywords:
         - DevOps
         - Agile
         - Qualification
         - Azure
-        - iOS/swift
-        - .NET/c#
-        - Qualification
-      highlights:
-        - "Try to automate everything"
-        - "Make sure we deliver on promises made"
-        - "Debugging with blindfolds"
+        - iOS/Swift
+        - .NET/C#
 
-    - employer: "TVH nv"
-      url: "https://www.tvh.com/"
-      position: "Lead System Enabling"
+    - name: TVH nv
+      url: https://www.tvh.com/
+      position: Lead System Enabling
+      startDate: "2020-07"
+      endDate: "2020-11"
       summary: |
-        System Enabling is a very diverse team with a lot of requirements.
-        My main purpose here was to add more Agile/DevOps practices and rituals
-        to the daily routine. One of the big projects I carried during my short
-        time here was to start using a GitOps deployment flow. This was
-        resolved by introducing ArgoCD with Helm combined with automated build and
-        promotion pipelines in Jenkins.
-      start: "2020-07"
-      end: "2020-11"
+        System Enabling was a very diverse team with a lot of requirements. My main purpose here was to add more Agile/DevOps practices and rituals to the daily routine. One of the big projects I carried during my short time here was to start using a GitOps deployment flow. This was resolved by introducing ArgoCD with Helm combined with automated build and promotion pipelines in Jenkins.
+
+        - Increased the velocity of the team
+        - Introduced GitOps
+        - Refined the Agile practices
       keywords:
         - DevOps
         - Agile
@@ -186,60 +159,52 @@ employment:
         - Helm
         - Kubernetes
         - GCP
-      highlights:
-        - "Up the velocity of the team"
-        - "Introduce GitOps"
-        - "Refine Agile Practices"
 
-    - employer: "Collibra nv"
-      url: "https://www.collibra.com/"
-      position: "Cloud Native Architect"
+    - name: Collibra nv
+      url: https://www.collibra.com/
+      position: Cloud Native Architect
+      startDate: "2020-01"
+      endDate: "2020-06"
       summary: |
-        At Collibra, my main function was to create a stable environment on which they
-        could deploy their new product. With the main focus being to guarantee stability
-        and security, we had to make some adjustments regarding the speed of the feedback
-        loops. However, this compromise was necessary to guarantee the longevity of our
-        product in meeting the needs of their future workload. 
-      start: "2020-01"
-      end: "2020-06"
+        At Collibra, my main function was to create a stable environment on which they could deploy their new product. With the main focus being to guarantee stability and security, we had to make some adjustments regarding the speed of the feedback loops. However, this compromise was necessary to guarantee the longevity of our product in meeting the needs of their future workload.
+
+        - Hardened the infrastructure
+        - Designed and optimized test patterns
+        - Did not just code the automation, but made it all run automatically
       keywords:
         - GitOps
         - AWS
         - GCP
-        - security
+        - Security
         - Golang
         - Terraform
         - kops
         - Kubernetes
         - Datadog
         - SignalFX
-        - Argo CD
+        - ArgoCD
         - Configuration Management
         - Groovy
         - Elastic (ECK)
-      highlights:
-        - "Harden infrastructure"
-        - "Design and optimize test patterns"
-        - "Don't just code automation, but make it all run automatically"
 
-    - employer: "TVH nv"
-      url: "https://www.tvh.com/"
-      position: "SRE Architect"
+    - name: TVH nv
+      url: https://www.tvh.com/
+      position: SRE Architect
+      startDate: "2019-08"
+      endDate: "2020-01"
       summary: |
-        TVH is in the middle of a major migration in the cloud which brings a lot of new and unexplored
-        challenges for them. My main influence here was to ease the transition and help move the small chunks
-        (microservices) that they were detaching from their old progress monolith. One of the biggest challenges
-        here was to give everyone enough room to fully execute their tasks in individual work environments while
-        making sure the whole is fully protected from internal and external threats. Another large part of my role
-        was coaching people in the merits of adopting the DevOps philosophy. This was the perfect moment to introduce
-        the concepts of Infrastructure-as-Code to show that a decade of one way is not a solid reason to deny more efficient means. 
-      start: "2019-08"
-      end: "2020-01"
+        TVH was in the middle of a major migration in the cloud, which brought a lot of new and unexplored challenges for them. My main influence here was to ease the transition and help move the small chunks (microservices) that they were detaching from their old progress monolith. One of the biggest challenges here was to give everyone enough room to fully execute their tasks in individual work environments while making sure the whole stayed fully protected from internal and external threats.
+
+        Another large part of my role was coaching people in the merits of adopting the DevOps philosophy. This was the perfect moment to introduce the concepts of Infrastructure-as-Code to show that a decade of one way was not a solid reason to deny more efficient means.
+
+        - Secured the organization in the cloud
+        - Set up a basic framework for devs to use
+        - Introduced IaC
       keywords:
         - DevOps
         - GCP
         - IAM
-        - security
+        - Security
         - Terraform
         - Ansible
         - Vault
@@ -249,28 +214,21 @@ employment:
         - Configuration Management
         - Python
         - Groovy
-      highlights:
-        - "Secure the organization in the cloud"
-        - "Setup a basic framework for devs to use"
-        - "Introduce IaC"
 
-    - employer: "Cegeka nv"
-      url: "https://www.cegeka.com/"
-      position: "DevOps Architect"
+    - name: Cegeka nv
+      url: https://www.cegeka.com/
+      position: DevOps Architect
+      startDate: "2017-09"
+      endDate: "2018-08"
       summary: |
-        My job here was multi-faceted. I managed the architectural designs, automation, and progression
-        of the technical aspects while coaching colleagues and customers in transitioning to the DevOps way.
-        The technical aspects were divided into two parts. The first half was working daily within the
-        development environment. Their priority was producing content as fast and as stable as possible.
-        My priority was to allow them the ability to focus on development by bringing them easy to use
-        tooling and an abstraction layer they felt comfortable using. This was accomplished through pipeline
-        optimization, ease of configuration, and adapting new services and pipelines on a Kubernetes environment
-        that would empower the developers. My other role was as part of an operations team. It functioned as a
-        service which maintained and managed the infrastructure for various development teams within Cegeka in
-        an Infrastructure-as-Code fashion. Through this, we designed and executed the requirements of the external
-        and internal customers on our infrastructure. 
-      start: "2017-09"
-      end: "2018-08"
+        My job here was multi-faceted. I managed the architectural designs, automation, and progression of the technical aspects while coaching colleagues and customers in transitioning to the DevOps way.
+
+        The technical aspects were divided into two parts. The first half was daily work within the development environment, where the priority was producing content as fast and as stable as possible. My priority was to let developers focus on development by bringing them easy to use tooling and an abstraction layer they felt comfortable using, through pipeline optimization, ease of configuration and new services on Kubernetes. The second half was in an operations team that maintained and managed the infrastructure for various development teams within Cegeka in an Infrastructure-as-Code fashion.
+
+        - Set up and designed container platforms
+        - Taught and envisioned the DevOps way
+        - Introduced new technologies and optimized IaC
+        - Created, designed and optimized build pipelines
       keywords:
         - DevOps
         - IaC
@@ -281,55 +239,51 @@ employment:
         - Containers
         - OpenShift
         - Kubernetes
-        - CI
         - Jenkins
         - Concourse CI
         - Pipelines
         - Groovy
-        - shell
+        - Shell
         - Python
-      highlights:
-        - "Setup and design of container platforms"
-        - "Teaching and envisioning the DevOps way"
-        - "Introducing new technologies"
-        - "Optimize IaC"
-        - "Create, design and optimize build pipelines"
 
-    - employer: "Mediahuis nv"
-      url: "http://www.mediahuis.be/"
-      position: "Senior WebOps Engineer"
+    - name: Mediahuis nv
+      url: http://www.mediahuis.be/
+      position: Senior WebOps Engineer
+      startDate: "2017-04"
+      endDate: "2017-09"
       summary: |
         The main goal was to normalize the deployments and server configurations and to bring in stability to high-volume webservers in a configuration as code manner.
-      start: "2017-04"
-      end: "2017-09"
-      keywords:
-      - Automation
-      - Configuration Management
-      - Ansible
-      - Powershell
-      - RHEL
-      - Windows Server
-      - IIS
-      highlights:
-        - "Normalize linux and wintel infrastructure through configuration management with Ansible"
-        - "Start a CMDB"
-        - "Maintaining high volume websites"
 
-    - employer: "Ypto nv"
-      url: "http://www.ypto.be/"
-      position: "Senior DevOps Engineer, Project Manager"
-      summary: |
-        We had to migrate from the old infrastructure to the new infrastructure. The goal was to fully
-        automate and stabilize because we were responsible for the whole stack—from maintaining firmware
-        upgrades to deploying artifacts coming from the development teams. We were required to constantly
-        test durability while maintaining a 96% uptime on the production environment. The best solution was
-        to fully automate the chain allowing us to better stress-test the environment. This gave us the ability
-        to better assess our current bottlenecks which provided valuable insight to make future improvements. 
-      start: "2013-09"
-      end: "2017-03"
+        - Normalized the Linux and Wintel infrastructure through configuration management with Ansible
+        - Started a CMDB
+        - Maintained high volume websites
       keywords:
-        - automation
-        - full-stack management
+        - Automation
+        - Configuration Management
+        - Ansible
+        - Powershell
+        - RHEL
+        - Windows Server
+        - IIS
+
+    - name: Ypto nv
+      url: http://www.ypto.be/
+      position: Senior DevOps Engineer, Project Manager
+      startDate: "2013-09"
+      endDate: "2017-03"
+      summary: |
+        We had to migrate from the old infrastructure to the new one. The goal was to fully automate and stabilize, because we were responsible for the whole stack, from maintaining firmware upgrades to deploying artifacts coming from the development teams, while constantly testing durability and maintaining 96% uptime on production. Fully automating the chain let us stress-test the environment and better assess our bottlenecks, which provided valuable insight for future improvements.
+
+        - Determined the next step to evolve our infrastructure, and the TCO of implemented vs planned software
+        - Made the hardware/software choices and defined the deadlines
+        - Pinpointed SPOFs in our infrastructure and planned how to make those HA
+        - Discussed with the team and key people in development how to automate the flow further
+        - Fully automated new virtual Linux and Windows deployments through a Linux control host with Ansible
+        - Automated and executed daily operational tasks
+        - Automated Java builds and deployments through a pipeline
+      keywords:
+        - Automation
+        - Full-stack management
         - IBM BladeCenter E
         - IBM HS22
         - Dell PowerEdge M1000e
@@ -337,10 +291,10 @@ employment:
         - Dell EqualLogic
         - Windows Server
         - RHEL / CentOS 6-7
-        - oVirt / RHEV-M (Red Hat Enterprise Virtualisation Manager)
+        - oVirt / RHEV-M
         - RH Satellite
         - IBM WebSphere
-        - freeIPA / RH IdM (Red Hat Identity Manager)
+        - freeIPA / RH IdM
         - Python
         - Powershell
         - Ansible
@@ -349,30 +303,16 @@ employment:
         - Icinga
         - Jenkins
         - Maven
-      highlights:
-        - "What is the next step to take to evolve our infrastructure?"
-        - "What is the TCO of implemented vs to-be implemented software?"
-        - "Hardware/software choices"
-        - "Defining deadlines"
-        - "Pinpoint SPOF in our infrastructure and plan how to make those HA"
-        - "Discuss with the team and key persons in development on how to automate the current flow even further and define which points are still in need of optimization"
-        - "Fully automate new virtual Linux and Windows deployments through a Linux control host with Ansible"
-        - "Automation and execution of daily operational tasks"
-        - "Automate java builds and deployments through a pipeline"
 
-    - employer: "IT-Care"
-      url: "http://www.itcare.be/"
-      position: "Cloud Integration Engineer"
+    - name: IT-Care
+      url: http://www.itcare.be/
+      position: Cloud Integration Engineer
+      startDate: "2012-01"
+      endDate: "2013-06"
       summary: |
-        Our main focus was to maintain customer environments mainly focused around transportation and accounting.
-        We performed numerous cloud migrations to increase accessibility and guarantee a faster, more dynamic workplace
-        setting. We completed various migrations to meet client needs. This ranged from exchange to Office365 to full
-        cloud migrations. One such project was a fully redundant virtualized environment with fail-over that included
-        migration from the old system to the new one with a connection to Office365. Another project was a cloud migration
-        with only a local controller for authentication for the local desktops. This included full Office365 integration
-        and inter site communication. 
-      start: "2012-01-01"
-      end: "2013-06-30"
+        Our main focus was to maintain customer environments mainly focused around transportation and accounting. We performed numerous cloud migrations to increase accessibility and guarantee a faster, more dynamic workplace setting.
+
+        We completed various migrations to meet client needs. This ranged from Exchange to Office365 to full cloud migrations. One such project was a fully redundant virtualized environment with fail-over that included migration from the old system to the new one with a connection to Office365. Another project was a cloud migration with only a local controller for authentication for the local desktops. This included full Office365 integration and inter site communication.
       keywords:
         - HP P4000
         - HP ML380 Gen8
@@ -383,40 +323,41 @@ employment:
         - MS System Center
         - MS SQL Server
         - Office365
-    
-    - employer: POLARIS Creative Solutions
+
+    - name: POLARIS Creative Solutions
       url: http://www.polariscs.com
-      position: owner
-      summary: ""
-      start: "2010-10"
-      end: "2011-12"
+      position: Owner
+      startDate: "2010-10"
+      endDate: "2011-12"
+      summary: |
+        - Maintained and expanded existing Wintel networks, and connected Macs to a mixed network
+        - Installed a CUPS server and managed a Linux fileserver
+        - Installed and managed the LAMP servers
+        - Defined and built web applications according to the client's wishes
+        - Developed and updated our in-house flatfile CMS
+        - Built a decent e-commerce platform for many of our clients
+        - Gave lectures about the professional use of social media and about SEO
       keywords:
         - Accounting
         - Budget management
         - Project planning
         - Tutoring
         - Linux
-        - WinTel
+        - Wintel
         - PHP
         - CUPS
         - LAMP
         - SEO
-      highlights:
-        - Maintenance and expansion of existing WinTel networks
-        - Connecting Mac's to a mixed network
-        - Installing a CUPS server
-        - Installing and managing a linux fileserver
-        - Installing and managing the lamp servers
-        - Defining and building web applications according to the client's wishes
-        - Developing and updating our in-house flatfile CMS
-        - Building a decent e-commerce platform for many of our clients
-        - Giving lectures about the professional use of social media
-        - Giving lectures about SEO
 
-    - employer: Optima Financial Planners
+    - name: Optima Financial Planners
       position: System Engineer, Change Manager
-      start: "2009-01"
-      end: "2010-09"
+      startDate: "2009-01"
+      endDate: "2010-09"
+      summary: |
+        - Started up an off-site location in Madrid, Spain, so everyone there could connect to the headquarters. This was partly done on-site and partly by communication with a local partner
+        - Ran a full migration towards a fully uniform environment with new hardware and Windows 2008 R2 as OS. These were fully virtualized on a Hyper-V cluster and afterwards physically moved towards the Belgacom datacenter in Machelen. All site communication was done over the Belgacom Explore solution
+        - Maintained the infrastructure and the backups
+        - Handled patch management, user management and security management
       keywords:
         - IBM HS21
         - MS Windows Server
@@ -427,23 +368,14 @@ employment:
         - Windows
         - Internet Information Services
         - Cisco Catalyst
-      highlights:
-        - "Starting up an off-site location in Madrid, Spain where they should all be able to connect to the headquarter. This was partly done on-site and partly by communication with a local partner."
-        - "A full migration towards a fully uniform environment with new hardware and Windows 2008 R2 as OS. These were fully virtualized on a Hyper-V cluster and afterwards physically moved towards the Belgacom datacenter in Machelen. All site communication was done over the Belgacom Explore solution."
-        - Maintaining the infrastructure
-        - Backup management
-        - Patch management
-        - User management
-        - Security management
 
-    - employer: Wij Helpen Sociaal Secretariaat
+    - name: Wij Helpen Sociaal Secretariaat
       url: http://www.wijhelpen.be/
       position: Change Manager
+      startDate: "2008-06"
+      endDate: "2008-12"
       summary: |
-        Managing and executing the migration from the ancient NT4.0/2000 environment to a full windows 2008 environment
-        with new clients (Windows Vista). This was executed with the help of an external partner which was going to give support once the project was finished.
-      start: "2008-06"
-      end: "2008-12"
+        Managed and executed the migration from the ancient NT4.0/2000 environment to a full Windows 2008 environment with new clients (Windows Vista). This was done with the help of an external partner, which was going to give support once the project was finished.
       keywords:
         - MS Windows Server
         - MS SQL Server
@@ -453,13 +385,13 @@ employment:
         - Symantec Backup Exec
         - Windows
 
-    - employer: Ablynx
+    - name: Ablynx
       url: http://www.ablynx.com/
       position: System Engineer
-      start: "2007-10"
-      end: "2008-05"
+      startDate: "2007-10"
+      endDate: "2008-05"
       summary: |
-        I needed to give support to the clients and automate the enrollment of new/faulty clients.
+        I needed to give support to the clients and automate the enrollment of new and faulty clients.
       keywords:
         - MS Windows Server
         - Altiris Deployment Server
@@ -468,234 +400,320 @@ employment:
         - Symantec Backup Exec
         - Windows
 
-    - employer: Siemens Fire, Security, Intrusion Prevention and Access Control
+    - name: Siemens Fire, Security, Intrusion Prevention and Access Control
       url: https://www.siemens.be/buildingtechnologies
       position: System Engineer, Support Engineer
-      start: "2007-03"
-      end: "2007-10"
+      startDate: "2007-03"
+      endDate: "2007-10"
       summary: |
-        I gave support to external clients during installation of Siemens products. I also completed
-        in-house small IT jobs which included taking backups, troubleshooting printer issues, and serving as internal IT helpdesk. 
+        I gave support to external clients during installation of Siemens products. I also completed in-house small IT jobs which included taking backups, troubleshooting printer issues, and serving as internal IT helpdesk.
       keywords:
         - MS Windows Server
         - Windows
         - MS Office
         - Access Control
         - SiPass Entro Lite / SiPass Entro
-        - SiPass Networked / SiPass Integrated
+        - SiPass Networked / Integrated
         - Intrusion
         - Sintony 60
         - Sintony 220 / 400
         - CCTV
-        - SISTORE AX 4 Lite / AX 4 / AX 9 / AX16
+        - SISTORE AX 4 / AX 9 / AX 16
         - SISTORE CX 4 / CX 9 / CX 16
         - Solaris Dome
         - Fire
         - FC 1002 / 1004 / 1008 / 1012
         - FC 330 A
 
-education:
-  - institution: "Hogeschool Gent"
-    title: "Bachelor's Degree Applied Informatics"
-    year: "200806"
-
-certification:
-  - title: VCE for aXsGUARD Gatekeepr 7.6 - Core
-    year: 2012
-  - title: VCE for aXsGUARD Gatekeepr 7.6 - Modules
-    year: 2012
-
-skills:
-  sets:
-    - name: "People skill"
-      level: intermediate
-      skills:
-        - name: Coaching
-          level: 4
-        - name: Envisioning
-          level: 4
-        - name: Teaching
-          level: 4
+  skills:
+    - name: People skills
+      level: Intermediate
+      keywords:
+        - Coaching
+        - Envisioning
+        - Teaching
 
     - name: Architecture
-      level: advanced
-      skills:
-        - name: Documenting infrastructure
-          level: 3
-        - name: Budget management
-          level: 3
-        - name: Hardware lifecycle
-          level: 4
-        - name: Design
-          level: 3
+      level: Advanced
+      keywords:
+        - Hardware lifecycle
+        - Design
+        - Documenting infrastructure
+        - Budget management
+
+    - name: GenAI
+      level: Advanced
+      keywords:
+        - Retrieval Augmented Generation
+        - LLM integration
+        - Vector databases
+        - Prompt engineering
+        - Agentic workflows
 
     - name: Cloud providers
-      level: advanced
-      skills:
-        - name: AWS
-          level: 3
-        - name: GCP
-          level: 5
-        - name: Azure
-          level: 5
+      level: Advanced
+      keywords:
+        - Azure
+        - GCP
+        - AWS
 
     - name: DevOps
-      level: master
-      skills:
-        - name: Automated deployment
-          level: 5
-        - name: Automated testing
-          level: 3
-        - name: Build automation
-          level: 4
-        - name: Config Management
-          level: 5
-        - name: Scripting
-          level: 4
-    
+      level: Master
+      keywords:
+        - Automated deployment
+        - Config Management
+        - Build automation
+        - Scripting
+        - Automated testing
+
     - name: Orchestration
-      level: advanced
-      skills:
-        - name: Kubernetes
-          level: 5
-        - name: OpenShift
-          level: 4
-        - name: Terraform
-          level: 4
-        - name: OpenStack
-          level: 3
+      level: Advanced
+      keywords:
+        - Kubernetes
+        - OpenShift
+        - Terraform
+        - OpenStack
 
-    - name: CI
-      level: master
-      skills:
-        - name: Jenkins
-          level: 5
-        - name: Concourse CI
-          level: 5
-        - name: ArgoCD
-          level: 4
-        - name: Azure DevOps
-          level: 4
-        - name: Google Cloud Build
-          level: 4
-        - name: Travis CI
-          level: 4
-        - name: CircleCI
-          level: 3
-        - name: GitLab CI
-          level: 3
-        - name: Drone
-          level: 2
+    - name: Continuous Integration
+      level: Master
+      keywords:
+        - Jenkins
+        - Concourse CI
+        - ArgoCD
+        - Azure DevOps
+        - Google Cloud Build
+        - Travis CI
+        - CircleCI
+        - GitLab CI
+        - Drone
 
-    - name: Virtualisation
-      level: advanced
-      skills:
-        - name: Hyper-V
-          level: 4
-        - name: Red Hat Virtualisation / oVirt
-          level: 5
-        - name: VMWare
-          level: 4
-        - name: XenServer
-          level: 3
+    - name: Virtualization
+      level: Advanced
+      keywords:
+        - Red Hat Virtualization / oVirt
+        - Hyper-V
+        - VMWare
+        - XenServer
 
     - name: Configuration Management
-      level: advanced
-      skills:
-        - name: Ansible
-          level: 5
-        - name: Puppet
-          level: 4
-        - name: Salt
-          level: 3
+      level: Advanced
+      keywords:
+        - Ansible
+        - Puppet
+        - Salt
 
     - name: Scripting
-      level: advanced
-      skills:
-        - name: Bash
-          level: 4
-        - name: Groovy
-          level: 3
-        - name: Javascript
-          level: 3
-        - name: Jinja2
-          level: 5
-        - name: Python
-          level: 4
-        - name: Powershell
-          level: 4
-        - name: YAML
-          level: 5
-        - name: Go
-          level: 3
+      level: Advanced
+      keywords:
+        - Jinja2
+        - YAML
+        - Python
+        - Bash
+        - Powershell
+        - Go
+        - Groovy
+        - Javascript
 
     - name: Operating Systems
-      level: master
-      skills:
-        - name: Linux
-          level: 5
-        - name: Windows Server
-          level: 3
+      level: Master
+      keywords:
+        - Linux
+        - Windows Server
 
     - name: Database
-      level: intermediate
-      skills:
-        - name: postgresql
-          level: 3
-        - name: MS SQL Server
-          level: 3
-        - name: MySQL
-          level: 4
+      level: Intermediate
+      keywords:
+        - MySQL
+        - PostgreSQL
+        - MS SQL Server
 
     - name: Webservers
-      level: advanced
-      skills:
-        - name: Apache
-          level: 4
-        - name: Internet Information Services
-          level: 3
-        - name: NGINX
-          level: 4
+      level: Advanced
+      keywords:
+        - NGINX
+        - Apache
+        - Internet Information Services
 
-references:
-  - name: Kasper Van Waes
-    function: Project manager Digital Solutions
-    company: UCB
-  - name: Jan Keirse
-    function: Lead System Enabling
-    company: TVH
-  - name: Patrick Dekens
-    function: Business Manager
-    company: Group IR
-  - name: Erwin François
-    function: .NET Architect
-    company: POCI
-  - name: Anthony Cauwelier
-    function: Operations Manager
-    company: B-Europe
+  projects:
+    - name: Ansible
+      url: https://www.ansible.com/
+      description: The simplest way to automate apps and IT infrastructure
+      startDate: "2015-09"
+      endDate: "2020-01"
+      summary: |
+        Ansible is the simplest way to automate apps and IT infrastructure: application deployment, configuration management and continuous delivery.
 
-languages:
-  - language: Dutch
-    level: Native
-  - language: English
-    level: Fluent
-  - language: French
-    level: Moderate
+        - Contributed to [ansible/ansible](https://github.com/ansible/ansible)
+        - Created a module to automate Red Hat Virtualization VM management, so we could manage our virtualized infrastructure in an IaC fashion
+        - Created a module to control Windows Firewall, since that was something we required for our Windows automation
+      keywords:
+        - Python
+        - YAML
+        - Jinja2
+        - Powershell
 
-interests:
-  - name: Gaming
-    keywords:
-      - Elder Scrolls
-      - Doom Eternal
-      - Warframe
-  - name: Movies
-    keywords:
-      - Fantasy
-      - Science-fiction
-      - Thriller
-  - name: Art &amp; Culture
-    keywords:
-      - Post-Fundamentalism
-      - Romanticism
-      - Gothic
-      - Baroque
+    - name: Cthulhu Dawn Chronicles
+      url: https://t-v.github.io/chronicles/
+      description: The adventures of Cthulhu Dawn while trying to defeat a new evil
+      startDate: "2015-09"
+      endDate: "2018-01"
+      summary: |
+        - Created [t-v/chronicles](https://github.com/t-v/chronicles) to help a friend visualize the fanfiction she wrote
+      keywords:
+        - HTML
+        - CSS
+        - Javascript
+
+  education:
+    - institution: Hogeschool Gent
+      url: https://www.hogent.be/
+      degree: Bachelor
+      area: Applied Informatics
+      endDate: "2008-06"
+
+  certificates:
+    - name: VASCO Certified Engineer, aXsGUARD Gatekeeper 7.6 - Core
+      issuer: VASCO Data Security
+      date: "2012"
+    - name: VASCO Certified Engineer, aXsGUARD Gatekeeper 7.6 - Modules
+      issuer: VASCO Data Security
+      date: "2012"
+
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+    - language: French
+      fluency: Limited Working Proficiency
+
+  interests:
+    - name: Outdoors
+      keywords:
+        - Tent camping with my son
+        - Forests
+        - Hills and mountains
+        - Hiking
+    - name: Gaming
+      keywords:
+        - Elder Scrolls
+        - Doom Eternal
+        - Warframe
+    - name: Movies & Series
+      keywords:
+        - Fantasy
+        - Science-fiction
+        - Thriller
+        - Anime
+    - name: Art & Culture
+      keywords:
+        - Post-Fundamentalism
+        - Romanticism
+        - Gothic
+        - Baroque
+
+  references:
+    - name: Kasper Van Waes
+      relationship: Project manager Digital Solutions, UCB
+      summary: Contact details available on request.
+    - name: Jan Keirse
+      relationship: Lead System Enabling, TVH
+      summary: Contact details available on request.
+    - name: Patrick Dekens
+      relationship: Business Manager, Group IR
+      summary: Contact details available on request.
+    - name: Erwin François
+      relationship: .NET Architect, POCI
+      summary: Contact details available on request.
+    - name: Anthony Cauwelier
+      relationship: Operations Manager, B-Europe
+      summary: Contact details available on request.
+
+locale:
+  # Use `yamlresume languages list` to get the list of supported languages
+  language: en
+
+# Shared section ordering and naming, kept close to the headings used by the
+# previous Jinja2 templates. YAML anchors avoid repeating this per layout.
+x-sections: &sections
+  order:
+    - basics
+    - work
+    - skills
+    - projects
+    - education
+    - certificates
+    - languages
+    - interests
+    - references
+  aliases:
+    basics: Profile
+    work: Employment
+    projects: Personal Projects
+    certificates: Certification
+
+layouts:
+  - engine: html
+    template: calm
+    sections: *sections
+    typography:
+      fontFamily: Quicksand
+      fontSize: 16px
+      lineSpacing: normal
+    advanced:
+      title: Timothy Vandenbrande - Curriculum Vitae
+      description: Curriculum Vitae of Timothy Vandenbrande, DevOps Architect.
+      keywords: DevOps, Architecture, Kubernetes, Azure, GCP, AWS, Ansible, GenAI, RAG
+      showIcons: true
+
+  - engine: latex
+    template: moderncv-banking
+    sections: *sections
+    page:
+      margins:
+        top: 2.0cm
+        bottom: 2.0cm
+        left: 1.5cm
+        right: 1.5cm
+      showPageNumbers: true
+      paperSize: a4
+    typography:
+      # Matches the HTML. The static Quicksand faces in fonts/ are mounted into
+      # the build container, because XeTeX cannot address the weights inside
+      # Google's variable Quicksand. See scripts/make-fonts.py.
+      fontFamily: Quicksand
+      fontSize: 10pt
+      links:
+        underline: false
+    advanced:
+      fontspec:
+        numbers: Lining
+      showIcons: true
+      # Mirrors the HTML, which hyperlinks the employer name instead of printing
+      # the URL. Printing it puts the name and the URL in the same fixed-width
+      # row, so a long employer name collides with its URL.
+      showUrls: false
+
+  - engine: docx
+    template: calm
+    sections: *sections
+    page:
+      margins:
+        top: 2.0cm
+        bottom: 2.0cm
+        left: 1.5cm
+        right: 1.5cm
+      showPageNumbers: true
+      paperSize: a4
+    typography:
+      # Readers without Quicksand installed will fall back to their default
+      # sans; the PDF embeds the font and is the canonical download.
+      fontFamily: Quicksand
+      fontSize: 10pt
+      lineSpacing: normal
+    advanced:
+      showUrls: true
+      showIcons: true
+
+  - engine: markdown
+    sections: *sections

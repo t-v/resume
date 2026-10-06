@@ -1,4 +1,4 @@
-# Simple workflow for deploying static content to GitHub Pages
+# Builds the resume with yamlresume and deploys the HTML version to GitHub Pages
 name: Deploy static content to Pages
 
 on:
@@ -21,7 +21,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
@@ -29,51 +28,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: '3.x'
-      - name: Install dependencies
-        run: |
-          sudo apt update
-          sudo apt install wget -y
-          wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb
-          sudo apt install ./wkhtmltox_0.12.6-1.focal_amd64.deb -y
-          python -m pip install --upgrade pip
-          pip install build
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        uses: actions/checkout@v4
+
+      # scripts/build.sh runs the pinned yamlresume container, which already
+      # ships XeTeX and the fonts, so there is nothing else to install here.
+      # It fails the job on schema violations.
       - name: Build resume
-        run: python ./generate_resume.py
+        run: ./scripts/build.sh
 
-      - name: Get Time
-        id: timeformatted
-        uses: nanzm/get-time-action@v1.1
-        with:
-          format: 'YYYY-MM-DD'
-
-      - name: prepare pages upload
+      - name: Prepare pages upload
         run: |
-          mkdir pages;
-          for asset in ./output/*.html; do
-            echo $asset
-            cp $asset ./pages/;
-          done
-          cp ./output/t-v-resume.html ./pages/index.html;
-          timeformat=$TIMEFORMAT
-          echo "<p style=\"text-align:right;font-size:small;color:grey;\">Last updated on: $timeformat</p>" >> ./pages/index.html
+          mkdir -p pages
+          cp output/t-v-resume.html pages/index.html
+          # Keep the old filename around so existing links stay valid.
+          cp output/t-v-resume.html pages/t-v-resume.html
+          cp output/t-v-resume.pdf pages/t-v-resume.pdf
           chmod -R a+rX ./pages
           ls -la ./pages/
-        env:
-          TIMEFORMAT: ${{ steps.timeformatted.outputs.time }}
+
       - name: Setup Pages
-        uses: actions/configure-pages@v1
+        uses: actions/configure-pages@v5
+
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           name: "github-pages"
-          # Upload entire repository
           path: './pages/'
+
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
